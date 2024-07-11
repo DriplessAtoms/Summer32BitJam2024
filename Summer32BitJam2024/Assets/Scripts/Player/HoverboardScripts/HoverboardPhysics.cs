@@ -34,7 +34,7 @@ public class HoverboardPhysics : MonoBehaviour
         }
         if(Input.GetKeyDown("r"))
         {
-            transform.rotation = Quaternion.Euler(0, 0, 0);
+            transform.rotation = Quaternion.Euler(0, transform.rotation.eulerAngles.y, 0);
             rb.angularVelocity = new Vector3(0, 0, 0);
         }
         if(Input.GetKeyDown("f"))

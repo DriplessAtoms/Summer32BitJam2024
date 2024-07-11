@@ -43,9 +43,14 @@ public class HoverboardMovement : MonoBehaviour
         {
             if (hit.collider.tag == "Floor")
                 PlayerMoveVelocity();
+            else if(hit.collider.tag == "Ramp")
+            {
+                PlayerMoveVelocity();
+                ChangeRotation(hit.collider.transform.rotation);
+            }
         }
         else
-            PlayerRotateY();
+            DisableRotation();
     }
     void PlayerMove()
     {
@@ -53,11 +58,22 @@ public class HoverboardMovement : MonoBehaviour
     }
     void PlayerMoveVelocity()
     {
+        rb.drag = 1.25f;
         if (rb.velocity.magnitude < maxSpeed)
             rb.AddForce(mainVelocity * currentSpeed);
     }
     void PlayerRotateY()
     {
         rb.angularVelocity = new Vector3(velocityY * rotateVelocity, rb.angularVelocity.y, rb.angularVelocity.z);
+    }
+    void DisableRotation()
+    {
+        rb.angularVelocity = new Vector3(0, 0, 0);
+        rb.rotation = Quaternion.Euler(0, rb.rotation.eulerAngles.y, 0);
+        rb.drag = 0;
+    }
+    void ChangeRotation(Quaternion rampRot)
+    {
+        rb.rotation = Quaternion.Euler(rampRot.eulerAngles.x, rb.rotation.eulerAngles.y, rampRot.eulerAngles.z);
     }
 }
