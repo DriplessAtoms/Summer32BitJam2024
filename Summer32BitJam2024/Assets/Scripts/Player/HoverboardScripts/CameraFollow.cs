@@ -14,5 +14,6 @@ public class CameraFollow : MonoBehaviour
     void Update()
     {
         cam.position = orientation.position;
+        cam.rotation = Quaternion.Euler(0,orientation.rotation.eulerAngles.y,0);
     }
 }

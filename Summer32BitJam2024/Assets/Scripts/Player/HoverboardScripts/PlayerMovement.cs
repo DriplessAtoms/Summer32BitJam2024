@@ -12,6 +12,11 @@ public class PlayerMovement : MonoBehaviour
     public float playerDrag;
     public float velocityX, velocityY;
     public float velocity;
+    public float maxSpeed;
+
+    //Raycast
+    public float distance;
+    public Transform middle;
 
     public Vector3 mainVelocity;
 
@@ -19,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        //rb = GetComponent<Rigidbody>();
 
         currentSpeed = walkSpeed;
     }
@@ -35,18 +40,25 @@ public class PlayerMovement : MonoBehaviour
             currentSpeed = walkSpeed;
         }
 
-        velocityX = Input.GetAxisRaw("Horizontal");
+        //velocityX = Input.GetAxisRaw("Horizontal");
         velocityY = Input.GetAxisRaw("Vertical");
 
         mainVelocity = orientation.forward * velocityY + orientation.right * velocityX;
 
-        velocity = Mathf.Clamp01(Mathf.Abs(velocityY) + Mathf.Abs(velocityX));
+        velocity = Mathf.Clamp01(Mathf.Abs(velocityY)); //Add " + Mathf.Abs(velocityX)" to hadd horizontal movement 
 
-        rb.drag = playerDrag;
+        //rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxSpeed);
+
+        //rb.drag = playerDrag;
     }
     void FixedUpdate()
     {
-        PlayerMove();
+        RaycastHit hit;
+
+        if (Physics.Raycast(middle.position, middle.TransformDirection(-Vector3.up), out hit, distance))
+            if(hit.collider.tag == "Floor")
+                PlayerMove();
+                
     }
     void PlayerMove()
     {
