@@ -1242,8 +1242,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 1830611515}
-  maxSpeed: 30
-  currentSpeed: 30
+  maxSpeed: 40
+  currentSpeed: 40
   orientation: {fileID: 496691096}
   mainVelocity: {x: 0, y: 0, z: 0}
   middle: {fileID: 1621567693}
