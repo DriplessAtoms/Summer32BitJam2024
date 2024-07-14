@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class Follow : MonoBehaviour
 {
-    public Transform player;
-    public Transform board;
+    public Transform follower;
+    public Transform followed;
 
     void Start()
     {
-        player = GetComponent<Transform>();
+        follower = GetComponent<Transform>();
     }
     void Update()
     {
-        player.position = new Vector3(board.position.x, player.position.y, board.position.z);
+        follower.position = new Vector3(followed.position.x, followed.position.y-0.2f, followed.position.z);
     }
 }

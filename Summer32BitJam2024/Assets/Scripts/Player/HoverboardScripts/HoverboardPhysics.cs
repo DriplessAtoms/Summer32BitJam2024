@@ -72,7 +72,7 @@ public class HoverboardPhysics : MonoBehaviour
 
         if (Physics.Raycast(Middle.position, Middle.TransformDirection(-Vector3.up), out hit, distance))
         {
-            Debug.Log(hit.collider.name);
+            //Debug.Log(hit.collider.name);
             //maxForce = 100;
             /*if (hit.collider.tag == "Ramp")
             {
