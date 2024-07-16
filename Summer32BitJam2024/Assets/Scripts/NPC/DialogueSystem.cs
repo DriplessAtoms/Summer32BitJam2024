@@ -19,17 +19,17 @@ public class DialogueSystem : MonoBehaviour
     public HoverboardMovement hm;
     public PlayerInteraction interactionSystem;
 
-    [SerializeField] private string dialogueScript;
-    [SerializeField] private string dialogueLine;
+    private string dialogueScript;
+    private string dialogueLine;
 
-    [SerializeField] private string nameStr;
-    [SerializeField] private string line;
+    private string nameStr;
+    private string line;
 
-    [SerializeField] private int currentPos = 0;
+    private int currentPos = 0;
 
-    [SerializeField] private bool dialogueTriggered = false;
+    private bool dialogueTriggered = false;
 
-    [SerializeField] private bool endOfDialogue = false;
+    private bool endOfDialogue = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -56,9 +56,9 @@ public class DialogueSystem : MonoBehaviour
         hm.enabled = false;
         interactionSystem.enabled = false;
 
-        dialogueTriggered = true;
-
         NextLine();
+
+        dialogueTriggered = true;
     }
     void NextLine()
     {
