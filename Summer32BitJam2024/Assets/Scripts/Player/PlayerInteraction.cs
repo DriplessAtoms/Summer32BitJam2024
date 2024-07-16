@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlayerInteraction : MonoBehaviour
 {
     public float distance;
     public Transform interactionDirection;
     public DialogueSystem ds;
+    public GameObject buttonPromptScreen;
+    public TMP_Text buttonString;
 
     //Might want to add disable player command here instead of dialogue system
 
@@ -19,15 +22,21 @@ public class PlayerInteraction : MonoBehaviour
             if (hit.collider.tag == "NPC")
             {
                 NPC_Data npc = hit.collider.GetComponent<NPC_Data>();
+                buttonPromptScreen.SetActive(true);
+                buttonString.text = "E";
                 if (Input.GetKeyDown("e"))
                 {
-                    TriggerDialogue(npc.dialogueList[0]);
+                    TriggerDialogue(npc.dialogueList[0], npc.icons);
                 }
             }
         }
+        if((hit.collider == null || hit.collider.tag != "NPC") && buttonPromptScreen.activeInHierarchy)
+        {
+            buttonPromptScreen.SetActive(false);
+        }
     }
-    void TriggerDialogue(TextAsset dialogue)
+    void TriggerDialogue(TextAsset dialogue, List<Texture> icon)
     {
-        ds.StartDialogue(dialogue);
+        ds.StartDialogue(dialogue, icon);
     }
 }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class DialogueSystem : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class DialogueSystem : MonoBehaviour
 
     public TMP_Text nameText;
     public TMP_Text lineText;
+    public RawImage characterIcon;
 
     public GameObject dialogueScreen;
     public HoverboardMovement hm;
@@ -45,9 +47,10 @@ public class DialogueSystem : MonoBehaviour
                 NextLine();
         }
     }
-    public void StartDialogue(TextAsset dialogueFile) //add parameters for icons and dialogue
+    public void StartDialogue(TextAsset dialogueFile, List<Texture> iconList) //add parameters for icons and dialogue
     {
         dialogueScript = dialogueFile.text;
+        icons = iconList;
 
         dialogueScreen.SetActive(true);
         hm.enabled = false;
@@ -84,12 +87,24 @@ public class DialogueSystem : MonoBehaviour
     {
         //Display all dialogue with name and line displayed and with their corresponding photo
         nameText.text = nameStr;
-        //ChangeIcon
+        ChangeIcon(nameStr);
         lineText.text = "";
         while (lineText.text.Length < line.Length)
         {
             lineText.text += line.Substring(lineText.text.Length, 1);
             yield return new WaitForSeconds(dialogueSpeed);
+        }
+    }
+    void ChangeIcon(string nameOfIcon)
+    {
+        for(int i = 0; i < icons.Count; i++)
+        {
+            Debug.Log(icons[i].name);
+            if(nameOfIcon == icons[i].name)
+            {
+                characterIcon.texture = icons[i];
+                return;
+            }
         }
     }
     void EndDialogue()
