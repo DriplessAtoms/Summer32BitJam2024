@@ -5,7 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ramp
-  - Floor
+  - NPC
   layers:
   - Default
   - TransparentFX

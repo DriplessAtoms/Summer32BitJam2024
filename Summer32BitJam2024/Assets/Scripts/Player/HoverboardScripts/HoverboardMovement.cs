@@ -106,7 +106,7 @@ public class HoverboardMovement : MonoBehaviour
         rb.rotation = Quaternion.Euler(-xAngle, transform.rotation.eulerAngles.y, 0);
         //(Vector3.Angle(rampRot, Vector3.right) - 90)
 
-        Debug.Log(Mathf.Rad2Deg *Mathf.Atan((rampRot.z+rampRot.x)/ rampRot.y) + " " + rampRot);
+        //Debug.Log(Mathf.Rad2Deg *Mathf.Atan((rampRot.z+rampRot.x)/ rampRot.y) + " " + rampRot);
         //Debug.Log(xAngle);
     }
     void Test(Vector3 rampRot)
