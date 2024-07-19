@@ -9,8 +9,8 @@ public class CameraFollow : MonoBehaviour
 
     void Start()
     {
-        //Application.targetFrameRate = 30;
-        //QualitySettings.vSyncCount = 0;
+        Application.targetFrameRate = 144;
+        QualitySettings.vSyncCount = 0;
         cam = GetComponent<Transform>();
     }
     void Update()
