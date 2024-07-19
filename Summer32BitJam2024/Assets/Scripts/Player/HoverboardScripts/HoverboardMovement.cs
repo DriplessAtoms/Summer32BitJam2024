@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class HoverboardMovement : MonoBehaviour
 {
+    public Transform parentOfBoard;
     public Rigidbody rb;
 
     public float maxSpeed;
@@ -23,10 +24,9 @@ public class HoverboardMovement : MonoBehaviour
 
     public Transform front, back;
 
-    void Start()
-    {
-        
-    }
+
+    public float smoothTime = 0.25f;
+    public float speed = 1;
 
     // Update is called once per frame
     void Update()
@@ -75,7 +75,8 @@ public class HoverboardMovement : MonoBehaviour
     void DisableRotation()
     {
         rb.angularVelocity = new Vector3(0, 0, 0);
-        rb.rotation = Quaternion.Euler(0, rb.rotation.eulerAngles.y, 0);
+        Quaternion newRotation = Quaternion.Euler(0, rb.rotation.eulerAngles.y, 0);
+        rb.rotation = Quaternion.Slerp(rb.rotation, newRotation, smoothTime);
         rb.drag = 0;
     }
     void ChangeRotation(Vector3 rampRot)
@@ -89,24 +90,38 @@ public class HoverboardMovement : MonoBehaviour
         //xNormal *= -normal_FTR; //HAS NOTHING TO DO WITH DIRECTION
         //xNormal *= -Mathf.Round(transform.forward.x);
 
-        xNormal = -Mathf.Rad2Deg * Mathf.Atan((rampRot.z + rampRot.x) / rampRot.y); //HAS EVERYTHING TO DO WITH DIRECTION >:D
+        //xNormal = -Mathf.Rad2Deg * Mathf.Atan((rampRot.z + rampRot.x) / rampRot.y); //HAS EVERYTHING TO DO WITH DIRECTION >:D
         //Different Method End
-        float xAngle = 0;
+
+
+        //Old Method DO NOT DELETE RYAN >:(
+        /*float xAngle = 0;
         int betterExample = (int)(rampRot.z*10);
         if (betterExample > 0 || betterExample < 0)
             xAngle = (xNormal / 90) * Mathf.Abs(transform.rotation.eulerAngles.y - 180) - xNormal;
-        else if (transform.rotation.eulerAngles.y < 270 && (rampRot.x > 0 || rampRot.x < 0))
+        else if (transform.rotation.eulerAngles.y < 270 && (rampRot.x > 0 || rampRot.x < 0)) //PieceWise
             xAngle = (((-xNormal) / 90) * Mathf.Abs(transform.rotation.eulerAngles.y - 90) + xNormal); //changes to formula here!!!
-        else if (transform.rotation.eulerAngles.y >= 270)
+        else if (transform.rotation.eulerAngles.y >= 270) //PieceWise
             xAngle = (((xNormal) / 90) * Mathf.Abs(transform.rotation.eulerAngles.y - 270) - xNormal);
         float zNormal = Vector3.Angle(rampRot, Vector3.right) - 90;
 
         float zAngle = ((zNormal / 90) * Mathf.Abs(transform.rotation.eulerAngles.y - 180) - zNormal);
 
-        rb.rotation = Quaternion.Euler(-xAngle, transform.rotation.eulerAngles.y, 0);
+        rb.rotation = Quaternion.Euler(-xAngle, transform.rotation.eulerAngles.y, 0);*/
         //(Vector3.Angle(rampRot, Vector3.right) - 90)
 
-        //Debug.Log(Mathf.Rad2Deg *Mathf.Atan((rampRot.z+rampRot.x)/ rampRot.y) + " " + rampRot);
+        //It works but at what cost?
+        Vector3 initialFrontDirection = transform.forward;
+        Quaternion initialRotation = transform.rotation;
+
+        Quaternion alignmentRotation = Quaternion.FromToRotation(-transform.up, -rampRot);
+
+        Quaternion newRotation = alignmentRotation * initialRotation;
+
+        Vector3 newFrontDirection = alignmentRotation * initialFrontDirection;
+
+        transform.rotation = Quaternion.Slerp(initialRotation, Quaternion.LookRotation(newFrontDirection, newRotation * Vector3.up), smoothTime);
+        Debug.Log(rb.rotation);
         //Debug.Log(xAngle);
     }
     void Test(Vector3 rampRot)
