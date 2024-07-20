@@ -17,6 +17,7 @@ public class DialogueSystem : MonoBehaviour
 
     public GameObject dialogueScreen;
     public HoverboardMovement hm;
+    public HoverboardDirection hd;
     public PlayerInteraction interactionSystem;
 
     private string dialogueScript;
@@ -54,6 +55,7 @@ public class DialogueSystem : MonoBehaviour
 
         dialogueScreen.SetActive(true);
         hm.enabled = false;
+        hd.enabled = false;
         interactionSystem.enabled = false;
 
         NextLine();
@@ -110,7 +112,8 @@ public class DialogueSystem : MonoBehaviour
     void EndDialogue()
     {
         currentPos = 0;
-        hm.enabled = true; ;
+        hm.enabled = true;
+        hd.enabled = true;
         interactionSystem.enabled = true;
         endOfDialogue = false;
         dialogueTriggered = false;

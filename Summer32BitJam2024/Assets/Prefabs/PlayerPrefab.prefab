@@ -838,6 +838,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 576f3b2acf31daa4e891be31f4d95b1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parentOfBoard: {fileID: 0}
   rb: {fileID: 1754936456165918558}
   maxSpeed: 40
   currentSpeed: 40
@@ -849,6 +850,8 @@ MonoBehaviour:
   onRampForward: 0
   front: {fileID: 8748545596623524373}
   back: {fileID: 3422645496982933298}
+  smoothTime: 0.25
+  speed: 1
 --- !u!1 &4417274815452928701
 GameObject:
   m_ObjectHideFlags: 0
@@ -1550,6 +1553,7 @@ MonoBehaviour:
   characterIcon: {fileID: 7190337609596070429}
   dialogueScreen: {fileID: 7090786400905197655}
   hm: {fileID: 434757134054829855}
+  hd: {fileID: 5297610877104035487}
   interactionSystem: {fileID: 1775964227983154166}
 --- !u!1 &8816924403082651231
 GameObject:
