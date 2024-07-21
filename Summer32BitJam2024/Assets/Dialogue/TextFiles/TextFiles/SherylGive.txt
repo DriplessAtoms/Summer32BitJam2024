@@ -2,5 +2,5 @@ Vance:Hey, Sheryl. Do you mind if I take a look at your radio?
 Sheryl:Great to see you, Vance!
 Sheryl:Sure, I don’t mind, but could you help me with something first?
 Sheryl:The last windstorm blew some of our wares out towards the south and we need to get them back fast!
-Sheryl:There’s ten of them. If you can bring ‘em all back, I’ll let you check the radio.
+Sheryl:There’s five of them. If you can bring ‘em all back, I’ll let you check the radio.
 Vance:Consider it done.
