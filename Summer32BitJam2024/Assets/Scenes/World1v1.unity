@@ -18183,11 +18183,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 559f88fc069cacc4d9210f8ec436bd0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canBeInteractedWith: 0
   dialogueList:
   - {fileID: 4900000, guid: 962498bdb4625a24d9d3c1a5954cf3ca, type: 3}
   icons:
   - {fileID: 2800000, guid: 56960b3aecc2c7549b91cdae5c7b529f, type: 3}
   dialogueNumber: 0
+  hasQuest: 0
+  quest: {fileID: 0}
 --- !u!1 &938637509
 GameObject:
   m_ObjectHideFlags: 0
@@ -22005,12 +22008,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 559f88fc069cacc4d9210f8ec436bd0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canBeInteractedWith: 1
   dialogueList:
   - {fileID: 4900000, guid: e71352e10c0f46745814b2da28b94562, type: 3}
   icons:
   - {fileID: 2800000, guid: c9772df846f809f4c93086c15c21e7a9, type: 3}
   - {fileID: 2800000, guid: e43253e121634134599d1f95a19ea890, type: 3}
   dialogueNumber: 0
+  hasQuest: 0
+  quest: {fileID: 0}
 --- !u!65 &1085129463
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22091,7 +22097,7 @@ Transform:
   m_GameObject: {fileID: 1085129461}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 220.4, y: 71, z: 907.1}
+  m_LocalPosition: {x: 221, y: 71, z: 907.1}
   m_LocalScale: {x: 1, y: 8.32, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -30784,10 +30790,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 559f88fc069cacc4d9210f8ec436bd0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canBeInteractedWith: 0
   dialogueList:
   - {fileID: 4900000, guid: f9ad267f730cdda47899601faa8fcb5f, type: 3}
   icons: []
   dialogueNumber: 0
+  hasQuest: 0
+  quest: {fileID: 0}
 --- !u!64 &1457520706
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -44902,11 +44911,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 559f88fc069cacc4d9210f8ec436bd0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canBeInteractedWith: 0
   dialogueList:
   - {fileID: 4900000, guid: 807c43f28a1e5cd4e9a06ca1fbb62d97, type: 3}
   icons:
   - {fileID: 2800000, guid: a8fa60a8f5b167a40bf05439512087b2, type: 3}
   dialogueNumber: 0
+  hasQuest: 0
+  quest: {fileID: 0}
 --- !u!1 &2043133482
 GameObject:
   m_ObjectHideFlags: 0

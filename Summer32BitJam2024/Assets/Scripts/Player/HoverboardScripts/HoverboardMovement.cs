@@ -26,7 +26,6 @@ public class HoverboardMovement : MonoBehaviour
 
 
     public float smoothTime = 0.25f;
-    public float speed = 1;
 
     // Update is called once per frame
     void Update()
@@ -121,7 +120,7 @@ public class HoverboardMovement : MonoBehaviour
         Vector3 newFrontDirection = alignmentRotation * initialFrontDirection;
 
         transform.rotation = Quaternion.Slerp(initialRotation, Quaternion.LookRotation(newFrontDirection, newRotation * Vector3.up), smoothTime);
-        Debug.Log(rb.rotation);
+        //Debug.Log(rb.rotation);
         //Debug.Log(xAngle);
     }
     void Test(Vector3 rampRot)

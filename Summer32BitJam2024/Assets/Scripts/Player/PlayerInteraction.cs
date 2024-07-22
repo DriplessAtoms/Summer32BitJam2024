@@ -10,6 +10,9 @@ public class PlayerInteraction : MonoBehaviour
     public DialogueSystem ds;
     public GameObject buttonPromptScreen;
     public TMP_Text buttonString;
+    public bool busy;
+
+    private NPC_Data npc;
 
     //Might want to add disable player command here instead of dialogue system
 
@@ -19,9 +22,9 @@ public class PlayerInteraction : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(interactionDirection.position, interactionDirection.TransformDirection(Vector3.forward), out hit, distance))
         {
-            if (hit.collider.tag == "NPC")
+            if (hit.collider.tag == "NPC" && hit.collider.GetComponent<NPC_Data>().canBeInteractedWith)
             {
-                NPC_Data npc = hit.collider.GetComponent<NPC_Data>();
+                npc = hit.collider.GetComponent<NPC_Data>();
                 buttonPromptScreen.SetActive(true);
                 buttonString.text = "E";
                 if (Input.GetKeyDown("e"))
@@ -38,5 +41,12 @@ public class PlayerInteraction : MonoBehaviour
     void TriggerDialogue(TextAsset dialogue, List<Texture> icon)
     {
         ds.StartDialogue(dialogue, icon);
+    }
+    public void EndDialogueCheck()
+    {
+        if (npc.hasQuest)
+        {
+            npc.quest.StartQuest(npc.questType);
+        }
     }
 }

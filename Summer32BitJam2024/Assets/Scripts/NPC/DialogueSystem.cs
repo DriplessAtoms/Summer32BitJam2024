@@ -18,7 +18,10 @@ public class DialogueSystem : MonoBehaviour
     public GameObject dialogueScreen;
     public HoverboardMovement hm;
     public HoverboardDirection hd;
+    public HoverboardPhysics hp;
     public PlayerInteraction interactionSystem;
+
+    public GameObject player;
 
     private string dialogueScript;
     private string dialogueLine;
@@ -56,7 +59,14 @@ public class DialogueSystem : MonoBehaviour
         dialogueScreen.SetActive(true);
         hm.enabled = false;
         hd.enabled = false;
+        hp.enabled = false;
+        interactionSystem.busy = true;
         interactionSystem.enabled = false;
+
+        //Disables All Movement From Player
+        player.GetComponent<Rigidbody>().velocity = new Vector3(0,0,0);
+        player.GetComponent<Rigidbody>().angularVelocity = new Vector3(0,0,0);
+        player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
 
         NextLine();
 
@@ -112,9 +122,19 @@ public class DialogueSystem : MonoBehaviour
     void EndDialogue()
     {
         currentPos = 0;
+
+        interactionSystem.enabled = true;
+        interactionSystem.busy = false;
+        interactionSystem.EndDialogueCheck(); //Interaction System checks if there's any action needed before giving control back to the player
+
         hm.enabled = true;
         hd.enabled = true;
-        interactionSystem.enabled = true;
+        hp.enabled = true;
+
+        player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+        player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotationZ;
+        player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotationX;
+
         endOfDialogue = false;
         dialogueTriggered = false;
         dialogueScreen.SetActive(false);
