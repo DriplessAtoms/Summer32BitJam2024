@@ -5,20 +5,31 @@ using UnityEngine;
 public class QuestDataScript : MonoBehaviour
 {
     public GameObject player;
-    public GameObject playerParent;
     public GameObject pointA;
     public GameObject pointB;
     public GameObject borders;
+
+    public List<GameObject> fetchableItems;
 
     public float distanceFromPointB;
 
     private bool distanceCheckB;
 
+    private int itemsCollected;
+
     void Start()
     {
-        pointA.SetActive(false);
-        pointB.SetActive(false);
+        if(pointA != null)
+            pointA.SetActive(false);
+        if (pointB != null)
+            pointB.SetActive(false);
         distanceCheckB = false;
+
+        for (int i = 0; i < fetchableItems.Count; i++)
+        {
+            fetchableItems[i].GetComponent<FetchableItem>().questData = this;
+            fetchableItems[i].SetActive(false);
+        }
     }
 
     void Update()
@@ -29,7 +40,7 @@ public class QuestDataScript : MonoBehaviour
             if (Vector3.Distance(player.transform.position, pointB.transform.position) <= distanceFromPointB)
             {
                 Debug.Log("You did it!");
-                EndQuest();
+                EndQuestAtoB();
             }
         }
         if (Input.GetKeyDown("g"))
@@ -48,13 +59,18 @@ public class QuestDataScript : MonoBehaviour
                     QuestAtoB();
                     break;
                 }
+            case "Fetch":
+                {
+                    QuestFetch();
+                    break;
+                }
             default:
                 {
                     break;
                 }
         }
     }
-    public void QuestAtoB()
+    private void QuestAtoB()
     {
         pointA.SetActive(true);
         pointB.SetActive(true);
@@ -68,7 +84,7 @@ public class QuestDataScript : MonoBehaviour
             borders.SetActive(true);
         }
     }
-    public void EndQuest()
+    private void EndQuestAtoB()
     {
         player.transform.position = pointA.transform.position;
         player.transform.rotation = pointA.transform.rotation;
@@ -76,6 +92,42 @@ public class QuestDataScript : MonoBehaviour
         pointA.SetActive(false);
         pointB.SetActive(false);
         distanceCheckB = false;
+        if (borders != null)
+        {
+            borders.SetActive(false);
+        }
+    }
+    private void QuestFetch()
+    {
+        itemsCollected = 0;
+
+        for(int i = 0; i < fetchableItems.Count; i++)
+        {
+            fetchableItems[i].SetActive(true);
+        }
+        if (borders != null)
+        {
+            borders.SetActive(true);
+        }
+    }
+    public void CollectedFetchItem(GameObject itemFetched)
+    {
+        itemFetched.SetActive(false);
+
+        Debug.Log("Collected Item!");
+
+        itemsCollected++;
+        if(itemsCollected == fetchableItems.Count)
+        {
+            EndQuestFetch();
+        }
+    }
+    private void EndQuestFetch()
+    {
+        itemsCollected = 0;
+
+        Debug.Log("Finished Fetch Quest");
+
         if (borders != null)
         {
             borders.SetActive(false);
