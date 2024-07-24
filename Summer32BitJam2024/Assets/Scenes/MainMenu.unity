@@ -1210,7 +1210,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Code:
 
-    - DriplessAtoms
+    - Ryan Adams
 
 
     Design:
@@ -1218,8 +1218,8 @@ MonoBehaviour:
     - Luan Ta
 
 
-    Special
-    thanks to:
+    Special thanks
+    to:
 
     - Marie Lo
 
@@ -2071,24 +2071,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Story & Game idea:
-
-    - Gersemnios
-
-
-    2D Art:
-
-    - Mary
-
-    -
-    Les
-
-
-    Music & SFX:
-
-    - Sevag Aghajanian
-
-    - Danny Goldstar'
+  m_text: "Story & Game idea:\n- Gersemnios\n\n2D Art:\n- Maryam\n- Les\n\nMusic
+    & SFX:\n- Sevag Aghajanian\n- Donovan \u201CDannyGoldstar\u201D Bautista"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cf361e883415d9a4cb90e608343f1760, type: 2}
   m_sharedMaterial: {fileID: -3548794902100035904, guid: cf361e883415d9a4cb90e608343f1760, type: 2}
@@ -2151,7 +2135,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -499.13715, w: -117.437256}
+  m_margin: {x: 0, y: 0, z: -497.23724, w: -117.437256}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
