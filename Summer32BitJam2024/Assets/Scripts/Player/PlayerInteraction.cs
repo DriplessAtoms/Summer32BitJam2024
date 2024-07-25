@@ -29,7 +29,7 @@ public class PlayerInteraction : MonoBehaviour
                 buttonString.text = "E";
                 if (Input.GetKeyDown("e"))
                 {
-                    TriggerDialogue(npc.dialogueList[0], npc.icons);
+                    TriggerDialogue(npc.dialogueList[npc.dialogueNumber], npc.icons);
                 }
             }
         }

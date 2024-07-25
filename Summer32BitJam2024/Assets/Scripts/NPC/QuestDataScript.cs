@@ -10,6 +10,7 @@ public class QuestDataScript : MonoBehaviour
     public GameObject pointB;
     public GameObject borders;
     public GameObject timerScreen;
+    public NPC_Data chain;
 
     public List<GameObject> fetchableItems;
 
@@ -143,6 +144,8 @@ public class QuestDataScript : MonoBehaviour
 
         Debug.Log("Finished Fetch Quest");
 
+        chain.dialogueNumber++;
+
         if (borders != null)
         {
             borders.SetActive(false);
@@ -165,6 +168,9 @@ public class QuestDataScript : MonoBehaviour
     }
     public void EndQuestTimedRaceFail()
     {
+        player.transform.position = pointA.transform.position;
+        player.transform.rotation = pointA.transform.rotation;
+
         timerScreen.SetActive(false);
         pointA.SetActive(false);
         pointB.SetActive(false);
@@ -176,6 +182,9 @@ public class QuestDataScript : MonoBehaviour
     }
     public void EndQuestTimedRaceWin()
     {
+        player.transform.position = pointA.transform.position;
+        player.transform.rotation = pointA.transform.rotation;
+
         timerScreen.SetActive(false);
         pointA.SetActive(false);
         pointB.SetActive(false);
