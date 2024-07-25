@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class QuestDataScript : MonoBehaviour
 {
@@ -8,10 +9,13 @@ public class QuestDataScript : MonoBehaviour
     public GameObject pointA;
     public GameObject pointB;
     public GameObject borders;
+    public GameObject timerScreen;
 
     public List<GameObject> fetchableItems;
 
     public float distanceFromPointB;
+
+    public float timeForTimedQuest;
 
     private bool distanceCheckB;
 
@@ -30,10 +34,16 @@ public class QuestDataScript : MonoBehaviour
             fetchableItems[i].GetComponent<FetchableItem>().questData = this;
             fetchableItems[i].SetActive(false);
         }
+
+        if (borders != null)
+        {
+            borders.SetActive(false);
+        }
     }
 
     void Update()
     {
+        //AtoB
         if (distanceCheckB)
         {
             Debug.Log(Vector3.Distance(player.transform.position, pointB.transform.position));
@@ -62,6 +72,11 @@ public class QuestDataScript : MonoBehaviour
             case "Fetch":
                 {
                     QuestFetch();
+                    break;
+                }
+            case "TimedRace":
+                {
+                    QuestTimedRace();
                     break;
                 }
             default:
@@ -132,5 +147,43 @@ public class QuestDataScript : MonoBehaviour
         {
             borders.SetActive(false);
         }
+    }
+    private void QuestTimedRace()
+    {
+        timerScreen.SetActive(true);
+        pointA.SetActive(true);
+        pointB.SetActive(true);
+
+        player.transform.position = pointA.transform.position;
+        player.transform.rotation = pointA.transform.rotation;
+
+        timerScreen.GetComponent<Timer>().StartCountdownTimer(timeForTimedQuest, this);
+        if (borders != null)
+        {
+            borders.SetActive(true);
+        }
+    }
+    public void EndQuestTimedRaceFail()
+    {
+        timerScreen.SetActive(false);
+        pointA.SetActive(false);
+        pointB.SetActive(false);
+        if (borders != null)
+        {
+            borders.SetActive(false);
+        }
+        Debug.Log("Failure");
+    }
+    public void EndQuestTimedRaceWin()
+    {
+        timerScreen.SetActive(false);
+        pointA.SetActive(false);
+        pointB.SetActive(false);
+        timerScreen.GetComponent<Timer>().StopTimer();
+        if (borders != null)
+        {
+            borders.SetActive(false);
+        }
+        Debug.Log("Win!");
     }
 }
