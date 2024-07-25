@@ -42,11 +42,19 @@ public class PlayerInteraction : MonoBehaviour
     {
         ds.StartDialogue(dialogue, icon);
     }
-    public void EndDialogueCheck()
+    public void EndDialogueCheck() //Gets called after dialogue has finished
     {
         if (npc.hasQuest)
         {
-            npc.quest.StartQuest(npc.questType);
+            npc.quest.StartQuest(npc.questType); //Starts quest based off type
+        }
+        if(npc.hasChain)
+        {
+            npc.chain.canBeInteractedWith = true;
+        }
+        if(npc.disableInteractionWhenDone)
+        {
+            npc.canBeInteractedWith = false;
         }
     }
 }
