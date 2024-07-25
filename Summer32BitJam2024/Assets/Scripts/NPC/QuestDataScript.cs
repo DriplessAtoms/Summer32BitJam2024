@@ -10,6 +10,7 @@ public class QuestDataScript : MonoBehaviour
     public GameObject pointB;
     public GameObject borders;
     public GameObject timerScreen;
+    public GameObject radioMinigameScreen;
     public NPC_Data chain;
 
     public List<GameObject> fetchableItems;
@@ -21,6 +22,11 @@ public class QuestDataScript : MonoBehaviour
     private bool distanceCheckB;
 
     private int itemsCollected;
+
+    public int leftDialStartPosition;
+    public int rightDialStartPosition;
+    public int leftDialTargetPosition;
+    public int rightDialTargetPosition;
 
     void Start()
     {
@@ -78,6 +84,11 @@ public class QuestDataScript : MonoBehaviour
             case "TimedRace":
                 {
                     QuestTimedRace();
+                    break;
+                }
+            case "RadioMinigame":
+                {
+                    QuestRadioMinigame();
                     break;
                 }
             default:
@@ -194,5 +205,17 @@ public class QuestDataScript : MonoBehaviour
             borders.SetActive(false);
         }
         Debug.Log("Win!");
+    }
+    private void QuestRadioMinigame()
+    {
+        radioMinigameScreen.SetActive(true);
+        player.SetActive(false);
+
+        radioMinigameScreen.GetComponent<RadioMinigame>().StartMinigame(leftDialStartPosition, rightDialStartPosition, leftDialTargetPosition, rightDialTargetPosition, this);
+    }
+    public void EndQuestRadioMinigame()
+    {
+        radioMinigameScreen.SetActive(false);
+        player.SetActive(true);
     }
 }
