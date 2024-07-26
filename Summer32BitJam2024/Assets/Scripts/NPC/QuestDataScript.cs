@@ -165,6 +165,14 @@ public class QuestDataScript : MonoBehaviour
             chain.dialogueNumber++;
             chain.quest = chainNewQuest;
             chain.questType = chainQuestName;
+            if (chain.quest == null)
+            {
+                chain.hasQuest = false;
+            }
+            else if (chain.quest != null)
+            {
+                chain.hasQuest = true;
+            }
         }
 
         if (borders != null)
@@ -220,6 +228,14 @@ public class QuestDataScript : MonoBehaviour
             chain.dialogueNumber++;
             chain.quest = chainNewQuest;
             chain.questType = chainQuestName;
+            if (chain.quest == null)
+            {
+                chain.hasQuest = false;
+            }
+            else if (chain.quest != null)
+            {
+                chain.hasQuest = true;
+            }
         }
     }
     private void QuestRadioMinigame()
@@ -241,6 +257,14 @@ public class QuestDataScript : MonoBehaviour
             chain.dialogueNumber++;
             chain.quest = chainNewQuest;
             chain.questType = chainQuestName;
+            if (chain.quest == null)
+            {
+                chain.hasQuest = false;
+            }
+            else if (chain.quest != null)
+            {
+                chain.hasQuest = true;
+            }
         }
     }
 }
