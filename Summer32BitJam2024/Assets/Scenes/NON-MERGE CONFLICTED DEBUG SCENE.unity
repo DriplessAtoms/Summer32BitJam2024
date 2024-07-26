@@ -929,6 +929,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 483774925}
+  playerInteractionScript: {fileID: 990050336}
   pointA: {fileID: 0}
   pointB: {fileID: 0}
   borders: {fileID: 0}
@@ -1719,6 +1720,17 @@ AudioSource:
   m_CorrespondingSourceObject: {fileID: 3529334458521136998, guid: 51dd67c5e3f6ec746aa54a938edd40e1, type: 3}
   m_PrefabInstance: {fileID: 1446864132}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &990050336 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1775964227983154166, guid: 51dd67c5e3f6ec746aa54a938edd40e1, type: 3}
+  m_PrefabInstance: {fileID: 1446864132}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9b5298aad5a84945bc93011dc89258b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1004791127 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3630265927053548775, guid: 51dd67c5e3f6ec746aa54a938edd40e1, type: 3}
@@ -1871,6 +1883,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 483774925}
+  playerInteractionScript: {fileID: 0}
   pointA: {fileID: 0}
   pointB: {fileID: 0}
   borders: {fileID: 0}
@@ -4008,6 +4021,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 483774925}
+  playerInteractionScript: {fileID: 0}
   pointA: {fileID: 1905824966}
   pointB: {fileID: 744701710}
   borders: {fileID: 122866139}

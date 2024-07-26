@@ -131,8 +131,8 @@ public class DialogueSystem : MonoBehaviour
 
         interactionSystem.enabled = true;
         interactionSystem.busy = false;
-        if(isAnNPC)
-            interactionSystem.EndDialogueCheck(); //Interaction System checks if there's any action needed before giving control back to the player
+        
+        interactionSystem.EndDialogueCheck(isAnNPC); //Interaction System checks if there's any action needed before giving control back to the player
 
         hm.enabled = true;
         hd.enabled = true;

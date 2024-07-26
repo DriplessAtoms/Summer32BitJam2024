@@ -42,27 +42,34 @@ public class PlayerInteraction : MonoBehaviour
     {
         ds.StartDialogue(dialogue, icon, true);
     }
-    public void EndDialogueCheck() //Gets called after dialogue has finished
+    public void EndDialogueCheck(bool isAnNPC) //Gets called after dialogue has finished
     {
-        if (npc.hasQuest)
+        if (isAnNPC)
         {
-            npc.quest.StartQuest(npc.questType); //Starts quest based off type
-        }
-        if(npc.hasChain)
-        {
-            if(!npc.chain.canBeInteractedWith)
-                npc.chain.canBeInteractedWith = true;
-            if(npc.hasChainQuest)
+            if (npc.hasQuest)
             {
-                npc.chain.dialogueNumber++;
-                npc.chain.quest = npc.chainNewQuest;
-                npc.chain.questType = npc.chainQuestName;
-                npc.chain.hasQuest = true;
+                npc.quest.StartQuest(npc.questType); //Starts quest based off type
+            }
+            if (npc.hasChain)
+            {
+                if (!npc.chain.canBeInteractedWith)
+                    npc.chain.canBeInteractedWith = true;
+                if (npc.hasChainQuest)
+                {
+                    npc.chain.dialogueNumber++;
+                    npc.chain.quest = npc.chainNewQuest;
+                    npc.chain.questType = npc.chainQuestName;
+                    npc.chain.hasQuest = true;
+                }
+            }
+            if (npc.disableInteractionWhenDone)
+            {
+                npc.canBeInteractedWith = false;
             }
         }
-        if(npc.disableInteractionWhenDone)
+        else
         {
-            npc.canBeInteractedWith = false;
+
         }
     }
 }
