@@ -6,6 +6,7 @@ using TMPro;
 public class QuestDataScript : MonoBehaviour
 {
     public GameObject player;
+    public PlayerInteraction playerInteractionScript;
     public GameObject pointA;
     public GameObject pointB;
     public GameObject borders;
@@ -159,9 +160,12 @@ public class QuestDataScript : MonoBehaviour
 
         Debug.Log("Finished Fetch Quest");
 
-        chain.dialogueNumber++;
-        chain.quest = chainNewQuest;
-        chain.questType = chainQuestName;
+        if (chain != null)
+        {
+            chain.dialogueNumber++;
+            chain.quest = chainNewQuest;
+            chain.questType = chainQuestName;
+        }
 
         if (borders != null)
         {
@@ -211,14 +215,18 @@ public class QuestDataScript : MonoBehaviour
             borders.SetActive(false);
         }
 
-        chain.dialogueNumber++;
-        chain.quest = chainNewQuest;
-        chain.questType = chainQuestName;
+        if (chain != null)
+        {
+            chain.dialogueNumber++;
+            chain.quest = chainNewQuest;
+            chain.questType = chainQuestName;
+        }
     }
     private void QuestRadioMinigame()
     {
         radioMinigameScreen.SetActive(true);
         player.SetActive(false);
+        playerInteractionScript.enabled = false;
 
         radioMinigameScreen.GetComponent<RadioMinigame>().StartMinigame(leftDialStartPosition, rightDialStartPosition, leftDialTargetPosition, rightDialTargetPosition, this);
     }
@@ -226,9 +234,13 @@ public class QuestDataScript : MonoBehaviour
     {
         radioMinigameScreen.SetActive(false);
         player.SetActive(true);
+        playerInteractionScript.enabled = true;
 
-        chain.dialogueNumber++;
-        chain.quest = chainNewQuest;
-        chain.questType = chainQuestName;
+        if (chain != null)
+        {
+            chain.dialogueNumber++;
+            chain.quest = chainNewQuest;
+            chain.questType = chainQuestName;
+        }
     }
 }
