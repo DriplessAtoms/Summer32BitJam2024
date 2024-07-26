@@ -13,6 +13,7 @@ public class PlayerInteraction : MonoBehaviour
     public bool busy;
 
     private NPC_Data npc;
+    private NoReturnCheck noReturn;
 
     //Might want to add disable player command here instead of dialogue system <-NO!!!
 
@@ -37,6 +38,11 @@ public class PlayerInteraction : MonoBehaviour
         {
             buttonPromptScreen.SetActive(false);
         }
+    }
+    public void TriggerNoReturnDialogue(TextAsset dialogue, List<Texture> icon, NoReturnCheck nrc)
+    {
+        noReturn = nrc;
+        ds.StartDialogue(dialogue, icon, false);
     }
     void TriggerDialogue(TextAsset dialogue, List<Texture> icon)
     {
@@ -67,9 +73,9 @@ public class PlayerInteraction : MonoBehaviour
                 npc.canBeInteractedWith = false;
             }
         }
-        else
+        else if(noReturn != null)
         {
-
+            noReturn.ResetPos();
         }
     }
 }
