@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class NoReturnCheck : MonoBehaviour
 {
+    public GameObject player;
     public GameObject resetPos;
 
-    public DialogueSystem ds;
+    public PlayerInteraction playerInteractionScript;
     public TextAsset dialogueFile;
     public List<Texture> iconList;
 
@@ -14,7 +15,13 @@ public class NoReturnCheck : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            ds.StartDialogue(dialogueFile, iconList, false);
+            playerInteractionScript.TriggerNoReturnDialogue(dialogueFile, iconList, this);
         }
+    }
+    public void ResetPos()
+    {
+        Debug.Log("Done");
+        player.transform.position = resetPos.transform.position;
+        player.transform.rotation = resetPos.transform.rotation;
     }
 }
