@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -357,6 +357,7 @@ MonoBehaviour:
   playerInteractionScript: {fileID: 990050336}
   dialogueFile: {fileID: 4900000, guid: e71352e10c0f46745814b2da28b94562, type: 3}
   iconList: []
+  fadeTransitionScript: {fileID: 154263485}
 --- !u!1 &122866139
 GameObject:
   m_ObjectHideFlags: 0
@@ -392,6 +393,28 @@ Transform:
   - {fileID: 242211305}
   m_Father: {fileID: 2072683192}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &154263479 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8768498459332704947, guid: 51dd67c5e3f6ec746aa54a938edd40e1, type: 3}
+  m_PrefabInstance: {fileID: 1446864132}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &154263485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 154263479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1d5b35b39d8f0a47ab6176b81cc49f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 483774925}
+  resetPos: {fileID: 0}
+  transitionScreen: {fileID: 1864660929}
+  transitionImage: {fileID: 1509049457}
+  transitionSpeed: 1
 --- !u!1 &196029964
 GameObject:
   m_ObjectHideFlags: 0
@@ -932,6 +955,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 483774925}
   playerInteractionScript: {fileID: 990050336}
+  fadeTransitionScript: {fileID: 0}
   pointA: {fileID: 0}
   pointB: {fileID: 0}
   borders: {fileID: 0}
@@ -1886,6 +1910,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 483774925}
   playerInteractionScript: {fileID: 0}
+  fadeTransitionScript: {fileID: 0}
   pointA: {fileID: 0}
   pointB: {fileID: 0}
   borders: {fileID: 0}
@@ -2502,6 +2527,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8768498459332704947, guid: 51dd67c5e3f6ec746aa54a938edd40e1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 154263485}
     - targetCorrespondingSourceObject: {fileID: 6404361235995395807, guid: 51dd67c5e3f6ec746aa54a938edd40e1, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1563802499}
@@ -2752,6 +2780,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1509049457 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3722575721548915310, guid: 51dd67c5e3f6ec746aa54a938edd40e1, type: 3}
+  m_PrefabInstance: {fileID: 1446864132}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1563802497 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6404361235995395807, guid: 51dd67c5e3f6ec746aa54a938edd40e1, type: 3}
@@ -3499,6 +3538,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1864660929 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2243736553178397037, guid: 51dd67c5e3f6ec746aa54a938edd40e1, type: 3}
+  m_PrefabInstance: {fileID: 1446864132}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1877677956 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 698155638089043244, guid: 51dd67c5e3f6ec746aa54a938edd40e1, type: 3}
@@ -4012,7 +4056,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 483774925}
-  playerInteractionScript: {fileID: 0}
+  playerInteractionScript: {fileID: 990050336}
+  fadeTransitionScript: {fileID: 154263485}
   pointA: {fileID: 1905824966}
   pointB: {fileID: 744701710}
   borders: {fileID: 122866139}
