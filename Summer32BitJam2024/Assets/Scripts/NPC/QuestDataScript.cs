@@ -7,6 +7,7 @@ public class QuestDataScript : MonoBehaviour
 {
     public GameObject player;
     public PlayerInteraction playerInteractionScript;
+    public FadeTransition fadeTransitionScript;
     public GameObject pointA;
     public GameObject pointB;
     public GameObject borders;
@@ -182,13 +183,17 @@ public class QuestDataScript : MonoBehaviour
     }
     private void QuestTimedRace()
     {
-        timerScreen.SetActive(true);
         pointA.SetActive(true);
         pointB.SetActive(true);
 
-        player.transform.position = pointA.transform.position;
-        player.transform.rotation = pointA.transform.rotation;
+        playerInteractionScript.enabled = false;
 
+        fadeTransitionScript.StartTeleportationTransitionWithEndTrigger(pointA,this);
+    }
+    public void EndOfTransitionRace()
+    {
+        playerInteractionScript.enabled = true;
+        timerScreen.SetActive(true);
         timerScreen.GetComponent<Timer>().StartCountdownTimer(timeForTimedQuest, this);
         if (borders != null)
         {
@@ -197,11 +202,10 @@ public class QuestDataScript : MonoBehaviour
     }
     public void EndQuestTimedRaceFail()
     {
-        player.transform.position = pointA.transform.position;
-        player.transform.rotation = pointA.transform.rotation;
+        fadeTransitionScript.StartTeleportationTransition(pointA);
 
         timerScreen.SetActive(false);
-        pointA.SetActive(false);
+        //pointA.SetActive(false);
         pointB.SetActive(false);
         if (borders != null)
         {
@@ -211,11 +215,10 @@ public class QuestDataScript : MonoBehaviour
     }
     public void EndQuestTimedRaceWin()
     {
-        player.transform.position = pointA.transform.position;
-        player.transform.rotation = pointA.transform.rotation;
+        fadeTransitionScript.StartTeleportationTransition(pointA);
 
         timerScreen.SetActive(false);
-        pointA.SetActive(false);
+        //pointA.SetActive(false);
         pointB.SetActive(false);
         timerScreen.GetComponent<Timer>().StopTimer();
         if (borders != null)

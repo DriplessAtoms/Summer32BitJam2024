@@ -44,13 +44,10 @@ public class HoverboardMovement : MonoBehaviour
 
         if (Physics.Raycast(middle.position, middle.TransformDirection(-Vector3.up), out hit, distance))
         {
-            if (hit.collider.tag == "Floor")
-                PlayerMoveVelocity();
-            else if(hit.collider.tag == "Ramp")
+           if(hit.collider.tag == "Ramp")
             {
                 PlayerMoveVelocity();
                 ChangeRotation(hit.normal);
-                //Test(hit.normal);
             }
         }
         else

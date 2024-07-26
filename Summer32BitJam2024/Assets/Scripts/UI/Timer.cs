@@ -11,11 +11,6 @@ public class Timer : MonoBehaviour
     private float timeNumber;
     private bool countDown;
 
-    void Start()
-    {
-        
-    }
-
     void Update()
     {
         if(countDown && timeNumber > 0)
@@ -42,7 +37,6 @@ public class Timer : MonoBehaviour
     public void EndCountdownTimer()
     {
         countDown = false;
-        Debug.Log("TIME'S UP!");
         questData.EndQuestTimedRaceFail();
     }
 }
