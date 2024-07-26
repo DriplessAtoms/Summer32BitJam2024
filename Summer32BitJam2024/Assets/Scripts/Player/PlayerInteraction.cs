@@ -14,7 +14,7 @@ public class PlayerInteraction : MonoBehaviour
 
     private NPC_Data npc;
 
-    //Might want to add disable player command here instead of dialogue system
+    //Might want to add disable player command here instead of dialogue system <-NO!!!
 
     // Update is called once per frame
     void Update()
@@ -50,7 +50,15 @@ public class PlayerInteraction : MonoBehaviour
         }
         if(npc.hasChain)
         {
-            npc.chain.canBeInteractedWith = true;
+            if(!npc.chain.canBeInteractedWith)
+                npc.chain.canBeInteractedWith = true;
+            if(npc.hasChainQuest)
+            {
+                npc.chain.dialogueNumber++;
+                npc.chain.quest = npc.chainNewQuest;
+                npc.chain.questType = npc.chainQuestName;
+                npc.chain.hasQuest = true;
+            }
         }
         if(npc.disableInteractionWhenDone)
         {

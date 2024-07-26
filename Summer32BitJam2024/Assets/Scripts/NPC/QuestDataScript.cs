@@ -11,7 +11,11 @@ public class QuestDataScript : MonoBehaviour
     public GameObject borders;
     public GameObject timerScreen;
     public GameObject radioMinigameScreen;
+
+    //Move Chain Shit PLEASEEEEEEEEEEE!!!!
     public NPC_Data chain;
+    public QuestDataScript chainNewQuest;
+    public string chainQuestName;
 
     public List<GameObject> fetchableItems;
 
@@ -156,6 +160,8 @@ public class QuestDataScript : MonoBehaviour
         Debug.Log("Finished Fetch Quest");
 
         chain.dialogueNumber++;
+        chain.quest = chainNewQuest;
+        chain.questType = chainQuestName;
 
         if (borders != null)
         {
@@ -204,7 +210,10 @@ public class QuestDataScript : MonoBehaviour
         {
             borders.SetActive(false);
         }
-        Debug.Log("Win!");
+
+        chain.dialogueNumber++;
+        chain.quest = chainNewQuest;
+        chain.questType = chainQuestName;
     }
     private void QuestRadioMinigame()
     {
@@ -217,5 +226,9 @@ public class QuestDataScript : MonoBehaviour
     {
         radioMinigameScreen.SetActive(false);
         player.SetActive(true);
+
+        chain.dialogueNumber++;
+        chain.quest = chainNewQuest;
+        chain.questType = chainQuestName;
     }
 }
