@@ -190,18 +190,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leftDial: {fileID: 6583787659533915078}
   rightDial: {fileID: 5913631197840841442}
-  leftArrow: {fileID: 0}
-  rightArrow: {fileID: 0}
-  leftArrowLimitTop: {fileID: 0}
-  leftArrowLimitDown: {fileID: 0}
-  rightArrowLimitTop: {fileID: 0}
-  rightArrowLimitDown: {fileID: 0}
+  leftArrow: {fileID: 8749666725394230759}
+  rightArrow: {fileID: 3630265927053548775}
+  leftArrowLimitTop: {fileID: 3508246191027164142}
+  leftArrowLimitDown: {fileID: 6763517853889821201}
+  rightArrowLimitTop: {fileID: 1303954900114713010}
+  rightArrowLimitDown: {fileID: 4917450664214872159}
   targetAngleLeft: 0
   targetAngleRight: 0
   speed: 1
   xAxis: 0
-  leftAudio: {fileID: 0}
-  rightAudio: {fileID: 0}
+  leftAudio: {fileID: 195332376597822651}
+  rightAudio: {fileID: 3529334458521136998}
   leftArrowLerp: 0
   rightArrowLerp: 0
 --- !u!1 &1104668244297373100
