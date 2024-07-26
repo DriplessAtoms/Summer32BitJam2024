@@ -204,6 +204,8 @@ MonoBehaviour:
   rightAudio: {fileID: 3529334458521136998}
   leftArrowLerp: 0
   rightArrowLerp: 0
+  dialColorSelected: {r: 1, g: 1, b: 1, a: 1}
+  dialColorUnSelected: {r: 0.7, g: 0.7, b: 0.7, a: 1}
 --- !u!1 &1104668244297373100
 GameObject:
   m_ObjectHideFlags: 0
@@ -2635,6 +2637,7 @@ GameObject:
   - component: {fileID: 2497506787464275789}
   - component: {fileID: 5967507921820818024}
   - component: {fileID: 1680186237826494675}
+  - component: {fileID: 8653711300528244358}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -2752,6 +2755,23 @@ MonoBehaviour:
   hp: {fileID: 0}
   interactionSystem: {fileID: 1775964227983154166}
   player: {fileID: 0}
+--- !u!114 &8653711300528244358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8768498459332704947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1d5b35b39d8f0a47ab6176b81cc49f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 4294386635178157270}
+  resetPos: {fileID: 0}
+  transitionScreen: {fileID: 2243736553178397037}
+  transitionImage: {fileID: 3722575721548915310}
+  transitionSpeed: 1
 --- !u!1 &8816924403082651231
 GameObject:
   m_ObjectHideFlags: 0
