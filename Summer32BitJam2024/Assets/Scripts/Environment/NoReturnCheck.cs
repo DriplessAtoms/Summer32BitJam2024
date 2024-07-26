@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class NoReturnCheck : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class NoReturnCheck : MonoBehaviour
     public TextAsset dialogueFile;
     public List<Texture> iconList;
 
+    public FadeTransition fadeTransitionScript;
+
     void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.tag == "Player")
@@ -20,8 +23,6 @@ public class NoReturnCheck : MonoBehaviour
     }
     public void ResetPos()
     {
-        Debug.Log("Done");
-        player.transform.position = resetPos.transform.position;
-        player.transform.rotation = resetPos.transform.rotation;
+        fadeTransitionScript.StartTeleportationTransition(resetPos);
     }
 }
