@@ -14,4 +14,8 @@ public class NPC_Data : MonoBehaviour
     public QuestDataScript quest;
     public bool hasChain = false;
     public NPC_Data chain;
+    //NO!!! WHY'D YOU PUT THEM IN BOTH!!!???
+    public bool hasChainQuest;
+    public QuestDataScript chainNewQuest;
+    public string chainQuestName;
 }
