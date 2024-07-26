@@ -248,7 +248,7 @@ GameObject:
   - component: {fileID: 72342734}
   - component: {fileID: 72342738}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: NoReturnCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4930,7 +4930,6 @@ SceneRoots:
   - {fileID: 1274007757}
   - {fileID: 1095633457280039363}
   - {fileID: 1446864132}
-  - {fileID: 1001766768639136822}
   - {fileID: 227728922}
   - {fileID: 445013188}
   - {fileID: 321753856}
@@ -4938,8 +4937,9 @@ SceneRoots:
   - {fileID: 1863418963}
   - {fileID: 1482267731}
   - {fileID: 1641697938}
+  - {fileID: 72342737}
+  - {fileID: 1001766768639136822}
   - {fileID: 1209162986}
   - {fileID: 2072683192}
   - {fileID: 380065655}
   - {fileID: 656197712}
-  - {fileID: 72342737}
