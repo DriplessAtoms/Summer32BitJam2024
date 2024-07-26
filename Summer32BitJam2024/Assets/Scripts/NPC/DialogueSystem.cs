@@ -34,6 +34,10 @@ public class DialogueSystem : MonoBehaviour
     private bool dialogueTriggered = false;
 
     private bool endOfDialogue = false;
+
+    private bool isAnNPC;
+
+    public 
     // Start is called before the first frame update
     void Start()
     {
@@ -51,10 +55,12 @@ public class DialogueSystem : MonoBehaviour
                 NextLine();
         }
     }
-    public void StartDialogue(TextAsset dialogueFile, List<Texture> iconList) //add parameters for icons and dialogue
+    public void StartDialogue(TextAsset dialogueFile, List<Texture> iconList, bool fromNPC) //add parameters for icons and dialogue
     {
         dialogueScript = dialogueFile.text;
         icons = iconList;
+
+        isAnNPC = fromNPC;
 
         dialogueScreen.SetActive(true);
         hm.enabled = false;
@@ -125,7 +131,8 @@ public class DialogueSystem : MonoBehaviour
 
         interactionSystem.enabled = true;
         interactionSystem.busy = false;
-        interactionSystem.EndDialogueCheck(); //Interaction System checks if there's any action needed before giving control back to the player
+        if(isAnNPC)
+            interactionSystem.EndDialogueCheck(); //Interaction System checks if there's any action needed before giving control back to the player
 
         hm.enabled = true;
         hd.enabled = true;
