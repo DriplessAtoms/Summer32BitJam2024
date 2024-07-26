@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RadioMinigame : MonoBehaviour
 {
@@ -40,23 +41,30 @@ public class RadioMinigame : MonoBehaviour
 
     private QuestDataScript questData;
 
+    public Color dialColorSelected;
+    public Color dialColorUnSelected;
+
     void Update()
     {
         if(Input.GetKeyDown("w") || Input.GetKeyDown("s"))
         {
             if(isLeftDial)
             {
+                selectedDial.GetComponent<RawImage>().color = dialColorUnSelected;
                 leftDialRot = xAxis;
                 xAxis = rightDialRot;
                 isLeftDial = false;
                 selectedDial = rightDial;
+                selectedDial.GetComponent<RawImage>().color = dialColorSelected;
             }
             else if(!isLeftDial)
             {
+                selectedDial.GetComponent<RawImage>().color = dialColorUnSelected;
                 rightDialRot = xAxis;
                 xAxis = leftDialRot;
                 isLeftDial = true;
                 selectedDial = leftDial;
+                selectedDial.GetComponent<RawImage>().color = dialColorSelected;
             }
         }
         leftArrowLerp = Mathf.Abs(leftDial.transform.rotation.eulerAngles.z / 360);
@@ -93,6 +101,9 @@ public class RadioMinigame : MonoBehaviour
     {
         isLeftDial = true;
         selectedDial = leftDial;
+
+        leftDial.GetComponent<RawImage>().color = dialColorSelected;
+        rightDial.GetComponent<RawImage>().color = dialColorUnSelected;
 
         xAxis = startL;
 
