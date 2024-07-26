@@ -40,7 +40,7 @@ public class PlayerInteraction : MonoBehaviour
     }
     void TriggerDialogue(TextAsset dialogue, List<Texture> icon)
     {
-        ds.StartDialogue(dialogue, icon);
+        ds.StartDialogue(dialogue, icon, true);
     }
     public void EndDialogueCheck() //Gets called after dialogue has finished
     {
