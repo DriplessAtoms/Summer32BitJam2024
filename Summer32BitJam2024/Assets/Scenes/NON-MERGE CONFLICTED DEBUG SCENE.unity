@@ -973,6 +973,10 @@ MonoBehaviour:
   leftDialTargetPosition: 75
   rightDialTargetPosition: 275
   noReturn: {fileID: 72342733}
+  musicSource: {fileID: 0}
+  racingThemeIntro: {fileID: 0}
+  racingThemeLoop: {fileID: 0}
+  racingThemeOutro: {fileID: 0}
 --- !u!4 &380065655
 Transform:
   m_ObjectHideFlags: 0
@@ -1942,6 +1946,10 @@ MonoBehaviour:
   leftDialTargetPosition: 0
   rightDialTargetPosition: 0
   noReturn: {fileID: 0}
+  musicSource: {fileID: 0}
+  racingThemeIntro: {fileID: 0}
+  racingThemeLoop: {fileID: 0}
+  racingThemeOutro: {fileID: 0}
 --- !u!4 &1209162986
 Transform:
   m_ObjectHideFlags: 0
@@ -2543,6 +2551,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1563802499}
   m_SourcePrefab: {fileID: 100100000, guid: 51dd67c5e3f6ec746aa54a938edd40e1, type: 3}
+--- !u!82 &1446864133 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 48541318141225478, guid: 51dd67c5e3f6ec746aa54a938edd40e1, type: 3}
+  m_PrefabInstance: {fileID: 1446864132}
+  m_PrefabAsset: {fileID: 0}
 --- !u!82 &1478509229 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 195332376597822651, guid: 51dd67c5e3f6ec746aa54a938edd40e1, type: 3}
@@ -2705,7 +2718,7 @@ MonoBehaviour:
   chainQuestName: 
   player: {fileID: 483774925}
   radioSound: {fileID: 711261258}
-  important: 1
+  important: 0
   distanceFromNPC: 2
 --- !u!65 &1482267728
 BoxCollider:
@@ -4079,6 +4092,10 @@ MonoBehaviour:
   leftDialTargetPosition: 0
   rightDialTargetPosition: 0
   noReturn: {fileID: 0}
+  musicSource: {fileID: 1446864133}
+  racingThemeIntro: {fileID: 8300000, guid: 151d2b012333acd46a10113bddb9b0ba, type: 3}
+  racingThemeLoop: {fileID: 8300000, guid: e09d12747c366bf42a3046b88b0ed24b, type: 3}
+  racingThemeOutro: {fileID: 8300000, guid: 4ed6d47627293e0449c3e4946900bf2f, type: 3}
 --- !u!1 &2119547132
 GameObject:
   m_ObjectHideFlags: 0
