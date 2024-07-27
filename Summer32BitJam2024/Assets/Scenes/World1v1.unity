@@ -1060,13 +1060,13 @@ MonoBehaviour:
   leftDialTargetPosition: 0
   rightDialTargetPosition: 0
   noReturn: {fileID: 0}
-  usesAudio: 0
-  mainSource: {fileID: 0}
-  musicSource: {fileID: 0}
-  musicSourceTwo: {fileID: 0}
-  racingThemeIntro: {fileID: 0}
-  racingThemeLoop: {fileID: 0}
-  racingThemeOutro: {fileID: 0}
+  usesAudio: 1
+  mainSource: {fileID: 1464524102}
+  musicSource: {fileID: 1464524104}
+  musicSourceTwo: {fileID: 1464524103}
+  racingThemeIntro: {fileID: 8300000, guid: 151d2b012333acd46a10113bddb9b0ba, type: 3}
+  racingThemeLoop: {fileID: 8300000, guid: e09d12747c366bf42a3046b88b0ed24b, type: 3}
+  racingThemeOutro: {fileID: 8300000, guid: 4ed6d47627293e0449c3e4946900bf2f, type: 3}
 --- !u!4 &18532880
 Transform:
   m_ObjectHideFlags: 0
@@ -2665,6 +2665,10 @@ PrefabInstance:
       propertyPath: dialogueList.Array.data[2]
       value: 
       objectReference: {fileID: 4900000, guid: 40afd34b4d7a70048b983dfafb470486, type: 3}
+    - target: {fileID: 4346753929436608068, guid: 166eedb70aafd1c47bd418665d7639d0, type: 3}
+      propertyPath: disableInteractionWhenDone
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6552022256893313629, guid: 166eedb70aafd1c47bd418665d7639d0, type: 3}
       propertyPath: m_LocalScale.x
       value: 5.2455106
@@ -14285,7 +14289,7 @@ MonoBehaviour:
   rightDialTargetPosition: 150
   noReturn: {fileID: 483478564}
   usesAudio: 0
-  mainSource: {fileID: 0}
+  mainSource: {fileID: 1464524102}
   musicSource: {fileID: 0}
   musicSourceTwo: {fileID: 0}
   racingThemeIntro: {fileID: 0}
@@ -22027,7 +22031,7 @@ MonoBehaviour:
   rightDialTargetPosition: 325
   noReturn: {fileID: 0}
   usesAudio: 0
-  mainSource: {fileID: 0}
+  mainSource: {fileID: 1464524102}
   musicSource: {fileID: 0}
   musicSourceTwo: {fileID: 0}
   racingThemeIntro: {fileID: 0}
@@ -39600,7 +39604,7 @@ GameObject:
   - component: {fileID: 1044957097}
   m_Layer: 0
   m_Name: Cylinder (6)
-  m_TagString: Untagged
+  m_TagString: Ramp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -53416,6 +53420,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 48541318141225478, guid: 51dd67c5e3f6ec746aa54a938edd40e1, type: 3}
+      propertyPath: m_Volume
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 698155638089043244, guid: 51dd67c5e3f6ec746aa54a938edd40e1, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -53431,6 +53439,10 @@ PrefabInstance:
     - target: {fileID: 911451009936521576, guid: 51dd67c5e3f6ec746aa54a938edd40e1, type: 3}
       propertyPath: m_hasFontAssetChanged
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1063197166619047094, guid: 51dd67c5e3f6ec746aa54a938edd40e1, type: 3}
+      propertyPath: m_Volume
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1470287173826713085, guid: 51dd67c5e3f6ec746aa54a938edd40e1, type: 3}
       propertyPath: m_IsActive
@@ -53532,6 +53544,10 @@ PrefabInstance:
       propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5652833712406062935, guid: 51dd67c5e3f6ec746aa54a938edd40e1, type: 3}
+      propertyPath: m_Volume
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5700720814053557342, guid: 51dd67c5e3f6ec746aa54a938edd40e1, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 51
@@ -53605,6 +53621,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!82 &1464524102 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 5652833712406062935, guid: 51dd67c5e3f6ec746aa54a938edd40e1, type: 3}
+  m_PrefabInstance: {fileID: 1464524100}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1464524103 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 2307409428427459063, guid: 51dd67c5e3f6ec746aa54a938edd40e1, type: 3}
+  m_PrefabInstance: {fileID: 1464524100}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1464524104 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 48541318141225478, guid: 51dd67c5e3f6ec746aa54a938edd40e1, type: 3}
+  m_PrefabInstance: {fileID: 1464524100}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1470890598
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -55231,7 +55262,7 @@ MonoBehaviour:
   rightDialTargetPosition: 275
   noReturn: {fileID: 0}
   usesAudio: 0
-  mainSource: {fileID: 0}
+  mainSource: {fileID: 1464524102}
   musicSource: {fileID: 0}
   musicSourceTwo: {fileID: 0}
   racingThemeIntro: {fileID: 0}
