@@ -23,6 +23,8 @@ public class DialogueSystem : MonoBehaviour
 
     public GameObject player;
 
+    public AudioSource clickSound;
+
     private string dialogueScript;
     private string dialogueLine;
 
@@ -49,6 +51,7 @@ public class DialogueSystem : MonoBehaviour
     {
         if (Input.GetKeyDown("e") && dialogueTriggered)
         {
+            clickSound.Play();
             if (endOfDialogue)
                 EndDialogue();
             else

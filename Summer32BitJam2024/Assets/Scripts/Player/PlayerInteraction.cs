@@ -11,6 +11,7 @@ public class PlayerInteraction : MonoBehaviour
     public GameObject buttonPromptScreen;
     public TMP_Text buttonString;
     public bool busy;
+    public AudioSource clickSound;
 
     private NPC_Data npc;
     private NoReturnCheck noReturn;
@@ -30,6 +31,7 @@ public class PlayerInteraction : MonoBehaviour
                 buttonString.text = "E";
                 if (Input.GetKeyDown("e"))
                 {
+                    clickSound.Play();
                     npc.important = false;
                     TriggerDialogue(npc.dialogueList[npc.dialogueNumber], npc.icons);
                 }
