@@ -453,6 +453,10 @@ MonoBehaviour:
   hasChainQuest: 0
   chainNewQuest: {fileID: 0}
   chainQuestName: 
+  player: {fileID: 0}
+  radioSound: {fileID: 0}
+  important: 0
+  distanceFromNPC: 0
 --- !u!65 &196029966
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -587,6 +591,10 @@ MonoBehaviour:
   hasChainQuest: 0
   chainNewQuest: {fileID: 0}
   chainQuestName: 
+  player: {fileID: 0}
+  radioSound: {fileID: 0}
+  important: 0
+  distanceFromNPC: 0
 --- !u!65 &227728919
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -827,6 +835,10 @@ MonoBehaviour:
   hasChainQuest: 0
   chainNewQuest: {fileID: 0}
   chainQuestName: 
+  player: {fileID: 0}
+  radioSound: {fileID: 0}
+  important: 0
+  distanceFromNPC: 0
 --- !u!65 &321753853
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1024,6 +1036,10 @@ MonoBehaviour:
   hasChainQuest: 0
   chainNewQuest: {fileID: 0}
   chainQuestName: 
+  player: {fileID: 0}
+  radioSound: {fileID: 0}
+  important: 0
+  distanceFromNPC: 0
 --- !u!65 &445013185
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1492,6 +1508,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &711261258 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 4014572959587302245, guid: 51dd67c5e3f6ec746aa54a938edd40e1, type: 3}
+  m_PrefabInstance: {fileID: 1446864132}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &744701710
 GameObject:
   m_ObjectHideFlags: 0
@@ -2680,6 +2701,10 @@ MonoBehaviour:
   hasChainQuest: 0
   chainNewQuest: {fileID: 0}
   chainQuestName: 
+  player: {fileID: 483774925}
+  radioSound: {fileID: 711261258}
+  important: 1
+  distanceFromNPC: 2
 --- !u!65 &1482267728
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2949,6 +2974,10 @@ MonoBehaviour:
   hasChainQuest: 1
   chainNewQuest: {fileID: 380065654}
   chainQuestName: RadioMinigame
+  player: {fileID: 0}
+  radioSound: {fileID: 0}
+  important: 0
+  distanceFromNPC: 0
 --- !u!65 &1641697935
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3427,6 +3456,10 @@ MonoBehaviour:
   hasChainQuest: 0
   chainNewQuest: {fileID: 0}
   chainQuestName: 
+  player: {fileID: 0}
+  radioSound: {fileID: 0}
+  important: 0
+  distanceFromNPC: 0
 --- !u!65 &1863418960
 BoxCollider:
   m_ObjectHideFlags: 0
