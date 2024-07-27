@@ -39,6 +39,19 @@ public class QuestDataScript : MonoBehaviour
 
     public GameObject noReturn;
 
+    private bool isRacing;
+    private bool sourceTwoTriggered;
+
+    //Audio
+    public bool usesAudio = false;
+    private bool usingAudio = false;
+    public AudioSource mainSource;
+    public AudioSource musicSource;
+    public AudioSource musicSourceTwo;
+    public AudioClip racingThemeIntro;
+    public AudioClip racingThemeLoop;
+    public AudioClip racingThemeOutro;
+
     void Start()
     {
         if(pointA != null)
@@ -57,6 +70,8 @@ public class QuestDataScript : MonoBehaviour
         {
             borders.SetActive(false);
         }
+        isRacing = false;
+        sourceTwoTriggered = false;
     }
 
     void Update()
@@ -74,6 +89,25 @@ public class QuestDataScript : MonoBehaviour
         if (Input.GetKeyDown("g"))
         {
             StartQuest("AtoB");
+        }
+        if (usesAudio)
+        {
+            if (isRacing && musicSource.time > 13.8f && !sourceTwoTriggered)
+            {
+                musicSourceTwo.Play();
+                musicSourceTwo.loop = true;
+                sourceTwoTriggered = true;
+            }
+            if (sourceTwoTriggered && !isRacing && musicSourceTwo.time > 27.7f)
+            {
+                sourceTwoTriggered = false;
+                musicSource.Play();
+            }
+            if (!sourceTwoTriggered && !isRacing && !mainSource.isPlaying && !musicSource.isPlaying && usingAudio)
+            {
+                usingAudio = false;
+                mainSource.Play();
+            }
         }
     }
 
@@ -199,6 +233,14 @@ public class QuestDataScript : MonoBehaviour
 
         playerInteractionScript.enabled = false;
 
+        mainSource.Pause();
+
+        musicSource.clip = racingThemeIntro;
+        musicSource.Play();
+
+        isRacing = true;
+        usingAudio = true;
+
         fadeTransitionScript.StartTeleportationTransitionWithEndTrigger(pointA,this);
     }
     public void EndOfTransitionRace()
@@ -206,6 +248,7 @@ public class QuestDataScript : MonoBehaviour
         playerInteractionScript.enabled = true;
         timerScreen.SetActive(true);
         timerScreen.GetComponent<Timer>().StartCountdownTimer(timeForTimedQuest, this);
+
         if (borders != null)
         {
             borders.SetActive(true);
@@ -213,6 +256,11 @@ public class QuestDataScript : MonoBehaviour
     }
     public void EndQuestTimedRaceFail()
     {
+        isRacing = false;
+        musicSourceTwo.loop = false;
+        musicSource.clip = racingThemeOutro;
+
+
         fadeTransitionScript.StartTeleportationTransition(pointA);
 
         timerScreen.SetActive(false);
@@ -226,6 +274,10 @@ public class QuestDataScript : MonoBehaviour
     }
     public void EndQuestTimedRaceWin()
     {
+        isRacing = false;
+        musicSourceTwo.loop = false;
+        musicSource.clip = racingThemeOutro;
+
         fadeTransitionScript.StartTeleportationTransition(pointA);
 
         timerScreen.SetActive(false);
@@ -254,6 +306,8 @@ public class QuestDataScript : MonoBehaviour
     }
     private void QuestRadioMinigame()
     {
+        mainSource.Pause();
+
         radioMinigameScreen.SetActive(true);
         player.SetActive(false);
         playerInteractionScript.enabled = false;
@@ -262,6 +316,8 @@ public class QuestDataScript : MonoBehaviour
     }
     public void EndQuestRadioMinigame()
     {
+        mainSource.Play();
+
         radioMinigameScreen.SetActive(false);
         player.SetActive(true);
         playerInteractionScript.enabled = true;
