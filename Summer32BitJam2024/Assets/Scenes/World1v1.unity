@@ -1041,7 +1041,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 57592215}
-  playerInteractionScript: {fileID: 0}
+  playerInteractionScript: {fileID: 2037073989}
+  fadeTransitionScript: {fileID: 1367644838}
   pointA: {fileID: 180704122}
   pointB: {fileID: 2026497105}
   borders: {fileID: 523498143}
@@ -2467,6 +2468,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 57592215}
   playerInteractionScript: {fileID: 0}
+  fadeTransitionScript: {fileID: 0}
   pointA: {fileID: 0}
   pointB: {fileID: 0}
   borders: {fileID: 0}
@@ -5637,7 +5639,7 @@ Transform:
   m_GameObject: {fileID: 180704122}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.70710695, z: -0, w: 0.7071066}
-  m_LocalPosition: {x: -155.5, y: -7.27, z: 6.5}
+  m_LocalPosition: {x: -155.5, y: -12.5, z: 6.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -14049,6 +14051,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 57592215}
   playerInteractionScript: {fileID: 2037073989}
+  fadeTransitionScript: {fileID: 0}
   pointA: {fileID: 0}
   pointB: {fileID: 0}
   borders: {fileID: 0}
@@ -17569,6 +17572,7 @@ MonoBehaviour:
   dialogueFile: {fileID: 4900000, guid: 092000395656dad47b714d7458fbbd3a, type: 3}
   iconList:
   - {fileID: 2800000, guid: b2ebc62a0b0f0b24f8e82083f3cd75d0, type: 3}
+  fadeTransitionScript: {fileID: 1367644838}
 --- !u!64 &483478566
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -21795,6 +21799,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 57592215}
   playerInteractionScript: {fileID: 2037073989}
+  fadeTransitionScript: {fileID: 0}
   pointA: {fileID: 0}
   pointB: {fileID: 0}
   borders: {fileID: 0}
@@ -49816,6 +49821,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 1964710534}
+--- !u!114 &1367644838 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8653711300528244358, guid: 51dd67c5e3f6ec746aa54a938edd40e1, type: 3}
+  m_PrefabInstance: {fileID: 1464524100}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1367644835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1d5b35b39d8f0a47ab6176b81cc49f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1379953466
 GameObject:
   m_ObjectHideFlags: 0
@@ -52487,19 +52503,19 @@ PrefabInstance:
       objectReference: {fileID: 57592215}
     - target: {fileID: 2142008581962675849, guid: 51dd67c5e3f6ec746aa54a938edd40e1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 203
+      value: -610
       objectReference: {fileID: 0}
     - target: {fileID: 2142008581962675849, guid: 51dd67c5e3f6ec746aa54a938edd40e1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 71
+      value: 77
       objectReference: {fileID: 0}
     - target: {fileID: 2142008581962675849, guid: 51dd67c5e3f6ec746aa54a938edd40e1, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 926
+      value: 1286
       objectReference: {fileID: 0}
     - target: {fileID: 2142008581962675849, guid: 51dd67c5e3f6ec746aa54a938edd40e1, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: -0.67559016
       objectReference: {fileID: 0}
     - target: {fileID: 2142008581962675849, guid: 51dd67c5e3f6ec746aa54a938edd40e1, type: 3}
       propertyPath: m_LocalRotation.x
@@ -52507,11 +52523,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2142008581962675849, guid: 51dd67c5e3f6ec746aa54a938edd40e1, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 1
+      value: 0.7372774
       objectReference: {fileID: 0}
     - target: {fileID: 2142008581962675849, guid: 51dd67c5e3f6ec746aa54a938edd40e1, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2142008581962675849, guid: 51dd67c5e3f6ec746aa54a938edd40e1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -52519,7 +52535,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2142008581962675849, guid: 51dd67c5e3f6ec746aa54a938edd40e1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
+      value: 265
       objectReference: {fileID: 0}
     - target: {fileID: 2142008581962675849, guid: 51dd67c5e3f6ec746aa54a938edd40e1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -54171,6 +54187,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 57592215}
   playerInteractionScript: {fileID: 2037073989}
+  fadeTransitionScript: {fileID: 0}
   pointA: {fileID: 0}
   pointB: {fileID: 0}
   borders: {fileID: 0}
@@ -72161,7 +72178,7 @@ Transform:
   m_GameObject: {fileID: 2026497105}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.0000005266606, w: 1}
-  m_LocalPosition: {x: -1706.1, y: -15, z: 117.70651}
+  m_LocalPosition: {x: -1704.74, y: -15, z: 117.70651}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
