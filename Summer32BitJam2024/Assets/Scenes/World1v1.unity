@@ -1053,6 +1053,8 @@ MonoBehaviour:
   chainQuestName: RadioMinigame
   actualChain: {fileID: 0}
   fetchableItems: []
+  countScreen: {fileID: 0}
+  countText: {fileID: 0}
   distanceFromPointB: 0
   timeForTimedQuest: 90
   leftDialStartPosition: 0
@@ -2567,6 +2569,8 @@ MonoBehaviour:
   - {fileID: 1705873966}
   - {fileID: 1690164043}
   - {fileID: 1997070179}
+  countScreen: {fileID: 596833011}
+  countText: {fileID: 1454092594}
   distanceFromPointB: 0
   timeForTimedQuest: 0
   leftDialStartPosition: 0
@@ -2614,6 +2618,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1161605646}
     - target: {fileID: 4346753929436608068, guid: 166eedb70aafd1c47bd418665d7639d0, type: 3}
+      propertyPath: chain
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4346753929436608068, guid: 166eedb70aafd1c47bd418665d7639d0, type: 3}
       propertyPath: quest
       value: 
       objectReference: {fileID: 74464190}
@@ -2621,6 +2629,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 57592215}
+    - target: {fileID: 4346753929436608068, guid: 166eedb70aafd1c47bd418665d7639d0, type: 3}
+      propertyPath: hasChain
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4346753929436608068, guid: 166eedb70aafd1c47bd418665d7639d0, type: 3}
       propertyPath: hasQuest
       value: 1
@@ -2639,7 +2651,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4346753929436608068, guid: 166eedb70aafd1c47bd418665d7639d0, type: 3}
       propertyPath: chainQuestName
-      value: Credits
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4346753929436608068, guid: 166eedb70aafd1c47bd418665d7639d0, type: 3}
       propertyPath: canBeInteractedWith
@@ -2667,7 +2679,7 @@ PrefabInstance:
       objectReference: {fileID: 4900000, guid: 40afd34b4d7a70048b983dfafb470486, type: 3}
     - target: {fileID: 4346753929436608068, guid: 166eedb70aafd1c47bd418665d7639d0, type: 3}
       propertyPath: disableInteractionWhenDone
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6552022256893313629, guid: 166eedb70aafd1c47bd418665d7639d0, type: 3}
       propertyPath: m_LocalScale.x
@@ -14281,6 +14293,8 @@ MonoBehaviour:
   chainQuestName: 
   actualChain: {fileID: 998704775}
   fetchableItems: []
+  countScreen: {fileID: 0}
+  countText: {fileID: 0}
   distanceFromPointB: 0
   timeForTimedQuest: 0
   leftDialStartPosition: 0
@@ -22023,6 +22037,8 @@ MonoBehaviour:
   chainQuestName: 
   actualChain: {fileID: 4346753928774800928}
   fetchableItems: []
+  countScreen: {fileID: 0}
+  countText: {fileID: 0}
   distanceFromPointB: 0
   timeForTimedQuest: 0
   leftDialStartPosition: 0
@@ -23721,6 +23737,11 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &596833011 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8732072389695760464, guid: 51dd67c5e3f6ec746aa54a938edd40e1, type: 3}
+  m_PrefabInstance: {fileID: 1464524100}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &600908016
 GameObject:
   m_ObjectHideFlags: 0
@@ -29822,7 +29843,7 @@ GameObject:
   - component: {fileID: 798258019}
   m_Layer: 0
   m_Name: Vance's house
-  m_TagString: Ramp
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36743,6 +36764,8 @@ MonoBehaviour:
   chainQuestName: 
   actualChain: {fileID: 0}
   fetchableItems: []
+  countScreen: {fileID: 0}
+  countText: {fileID: 0}
   distanceFromPointB: 0
   timeForTimedQuest: 0
   leftDialStartPosition: 0
@@ -40758,7 +40781,7 @@ Transform:
   m_GameObject: {fileID: 1068860048}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.70710677, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -413.1, y: 248.25, z: -141.3}
+  m_LocalPosition: {x: -454.1, y: 248.25, z: -199.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -52318,6 +52341,17 @@ Transform:
   - {fileID: 1141104603}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1454092594 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8233889079767013995, guid: 51dd67c5e3f6ec746aa54a938edd40e1, type: 3}
+  m_PrefabInstance: {fileID: 1464524100}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1462109523
 GameObject:
   m_ObjectHideFlags: 0
@@ -53456,6 +53490,14 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 57592215}
+    - target: {fileID: 1955391657827007148, guid: 51dd67c5e3f6ec746aa54a938edd40e1, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1955391657827007148, guid: 51dd67c5e3f6ec746aa54a938edd40e1, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2142008581962675849, guid: 51dd67c5e3f6ec746aa54a938edd40e1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 203
@@ -53509,13 +53551,37 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 3298383796921639684, guid: 51dd67c5e3f6ec746aa54a938edd40e1, type: 3}
+      propertyPath: m_fontSize
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 3298383796921639684, guid: 51dd67c5e3f6ec746aa54a938edd40e1, type: 3}
       propertyPath: m_fontAsset
       value: 
       objectReference: {fileID: 11400000, guid: cf361e883415d9a4cb90e608343f1760, type: 2}
     - target: {fileID: 3298383796921639684, guid: 51dd67c5e3f6ec746aa54a938edd40e1, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3298383796921639684, guid: 51dd67c5e3f6ec746aa54a938edd40e1, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3298383796921639684, guid: 51dd67c5e3f6ec746aa54a938edd40e1, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3298383796921639684, guid: 51dd67c5e3f6ec746aa54a938edd40e1, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 3298383796921639684, guid: 51dd67c5e3f6ec746aa54a938edd40e1, type: 3}
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: -3548794902100035904, guid: cf361e883415d9a4cb90e608343f1760, type: 2}
+    - target: {fileID: 3298383796921639684, guid: 51dd67c5e3f6ec746aa54a938edd40e1, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 3298383796921639684, guid: 51dd67c5e3f6ec746aa54a938edd40e1, type: 3}
       propertyPath: m_hasFontAssetChanged
       value: 0
@@ -53548,9 +53614,21 @@ PrefabInstance:
       propertyPath: m_Volume
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5681203841253142533, guid: 51dd67c5e3f6ec746aa54a938edd40e1, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 806
+      objectReference: {fileID: 0}
+    - target: {fileID: 5681203841253142533, guid: 51dd67c5e3f6ec746aa54a938edd40e1, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 465
+      objectReference: {fileID: 0}
     - target: {fileID: 5700720814053557342, guid: 51dd67c5e3f6ec746aa54a938edd40e1, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 51
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 5700720814053557342, guid: 51dd67c5e3f6ec746aa54a938edd40e1, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 5748621594280493008, guid: 51dd67c5e3f6ec746aa54a938edd40e1, type: 3}
       propertyPath: m_fontAsset
@@ -53576,9 +53654,33 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8233889079767013995, guid: 51dd67c5e3f6ec746aa54a938edd40e1, type: 3}
+      propertyPath: m_fontSize
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 8233889079767013995, guid: 51dd67c5e3f6ec746aa54a938edd40e1, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: cf361e883415d9a4cb90e608343f1760, type: 2}
+    - target: {fileID: 8233889079767013995, guid: 51dd67c5e3f6ec746aa54a938edd40e1, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 8233889079767013995, guid: 51dd67c5e3f6ec746aa54a938edd40e1, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -3548794902100035904, guid: cf361e883415d9a4cb90e608343f1760, type: 2}
+    - target: {fileID: 8233889079767013995, guid: 51dd67c5e3f6ec746aa54a938edd40e1, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8655678531676219153, guid: 51dd67c5e3f6ec746aa54a938edd40e1, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 58
+      objectReference: {fileID: 0}
+    - target: {fileID: 8732072389695760464, guid: 51dd67c5e3f6ec746aa54a938edd40e1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8891492440544209379, guid: 51dd67c5e3f6ec746aa54a938edd40e1, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -55254,6 +55356,8 @@ MonoBehaviour:
   chainQuestName: 
   actualChain: {fileID: 1757733947}
   fetchableItems: []
+  countScreen: {fileID: 0}
+  countText: {fileID: 0}
   distanceFromPointB: 0
   timeForTimedQuest: 0
   leftDialStartPosition: 0
@@ -73776,7 +73880,7 @@ Transform:
   m_GameObject: {fileID: 2026497105}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.0000005266606, w: 1}
-  m_LocalPosition: {x: -1708.1, y: -15, z: 117.70651}
+  m_LocalPosition: {x: -1706.1, y: -15, z: 117.70651}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
