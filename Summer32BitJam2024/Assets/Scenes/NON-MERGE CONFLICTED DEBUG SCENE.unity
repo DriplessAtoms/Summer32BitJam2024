@@ -972,6 +972,8 @@ MonoBehaviour:
   chainQuestName: 
   actualChain: {fileID: 0}
   fetchableItems: []
+  countScreen: {fileID: 0}
+  countText: {fileID: 0}
   distanceFromPointB: 0
   timeForTimedQuest: 0
   leftDialStartPosition: 0
@@ -1390,6 +1392,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -50}
+--- !u!114 &610745526 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8233889079767013995, guid: 51dd67c5e3f6ec746aa54a938edd40e1, type: 3}
+  m_PrefabInstance: {fileID: 1446864132}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &629945879
 GameObject:
   m_ObjectHideFlags: 0
@@ -1527,6 +1540,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &695153555 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8732072389695760464, guid: 51dd67c5e3f6ec746aa54a938edd40e1, type: 3}
+  m_PrefabInstance: {fileID: 1446864132}
+  m_PrefabAsset: {fileID: 0}
 --- !u!82 &711261258 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 4014572959587302245, guid: 51dd67c5e3f6ec746aa54a938edd40e1, type: 3}
@@ -1954,6 +1972,8 @@ MonoBehaviour:
   - {fileID: 1782698979}
   - {fileID: 1849309115}
   - {fileID: 1329377234}
+  countScreen: {fileID: 695153555}
+  countText: {fileID: 610745526}
   distanceFromPointB: 0
   timeForTimedQuest: 0
   leftDialStartPosition: 0
@@ -4108,6 +4128,8 @@ MonoBehaviour:
   chainQuestName: 
   actualChain: {fileID: 0}
   fetchableItems: []
+  countScreen: {fileID: 0}
+  countText: {fileID: 0}
   distanceFromPointB: 0
   timeForTimedQuest: 30
   leftDialStartPosition: 0
