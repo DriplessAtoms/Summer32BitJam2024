@@ -243,6 +243,9 @@ public class QuestDataScript : MonoBehaviour
 
         playerInteractionScript.enabled = false;
 
+        sourceTwoTriggered = false;
+        musicSourceTwo.Pause();
+        musicSourceTwo.time = 0;
         mainSource.Pause();
 
         musicSource.clip = racingThemeIntro;
@@ -250,6 +253,7 @@ public class QuestDataScript : MonoBehaviour
 
         isRacing = true;
         usingAudio = true;
+
 
         fadeTransitionScript.StartTeleportationTransitionWithEndTrigger(pointA,this);
     }
