@@ -1208,7 +1208,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Code:
+  m_text: 'Programming:
 
     - Ryan Adams
 
@@ -1218,8 +1218,8 @@ MonoBehaviour:
     - Luan Ta
 
 
-    Special thanks
-    to:
+    Special
+    thanks to:
 
     - Marie Lo
 
