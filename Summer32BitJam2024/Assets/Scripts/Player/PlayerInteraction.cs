@@ -30,6 +30,7 @@ public class PlayerInteraction : MonoBehaviour
                 buttonString.text = "E";
                 if (Input.GetKeyDown("e"))
                 {
+                    npc.important = false;
                     TriggerDialogue(npc.dialogueList[npc.dialogueNumber], npc.icons);
                 }
             }
@@ -44,7 +45,7 @@ public class PlayerInteraction : MonoBehaviour
         noReturn = nrc;
         ds.StartDialogue(dialogue, icon, false);
     }
-    void TriggerDialogue(TextAsset dialogue, List<Texture> icon)
+    public void TriggerDialogue(TextAsset dialogue, List<Texture> icon)
     {
         ds.StartDialogue(dialogue, icon, true);
     }
@@ -58,6 +59,7 @@ public class PlayerInteraction : MonoBehaviour
             }
             if (npc.hasChain)
             {
+                npc.chain.important = true;
                 if (!npc.chain.canBeInteractedWith)
                     npc.chain.canBeInteractedWith = true;
                 if (npc.hasChainQuest)

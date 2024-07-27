@@ -163,6 +163,7 @@ public class QuestDataScript : MonoBehaviour
 
         if (chain != null)
         {
+            chain.important = true;
             chain.dialogueNumber++;
             chain.quest = chainNewQuest;
             chain.questType = chainQuestName;
@@ -260,6 +261,7 @@ public class QuestDataScript : MonoBehaviour
             chain.dialogueNumber++;
             chain.quest = chainNewQuest;
             chain.questType = chainQuestName;
+
             if (chain.quest == null)
             {
                 chain.hasQuest = false;
@@ -268,6 +270,8 @@ public class QuestDataScript : MonoBehaviour
             {
                 chain.hasQuest = true;
             }
+
+            playerInteractionScript.TriggerDialogue(chain.dialogueList[chain.dialogueNumber], chain.icons);
         }
     }
 }
