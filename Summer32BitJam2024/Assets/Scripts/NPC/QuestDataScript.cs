@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class QuestDataScript : MonoBehaviour
 {
@@ -33,6 +34,8 @@ public class QuestDataScript : MonoBehaviour
     public int rightDialStartPosition;
     public int leftDialTargetPosition;
     public int rightDialTargetPosition;
+
+    public GameObject noReturn;
 
     void Start()
     {
@@ -95,6 +98,11 @@ public class QuestDataScript : MonoBehaviour
             case "RadioMinigame":
                 {
                     QuestRadioMinigame();
+                    break;
+                }
+            case "Credits":
+                {
+                    SceneManager.LoadScene("Credits", LoadSceneMode.Single);
                     break;
                 }
             default:
@@ -272,6 +280,10 @@ public class QuestDataScript : MonoBehaviour
             }
 
             playerInteractionScript.TriggerDialogue(chain.dialogueList[chain.dialogueNumber], chain.icons);
+        }
+        if(noReturn != null)
+        {
+            noReturn.SetActive(false);
         }
     }
 }
