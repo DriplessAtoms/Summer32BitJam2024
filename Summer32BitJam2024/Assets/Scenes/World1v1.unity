@@ -1060,6 +1060,13 @@ MonoBehaviour:
   leftDialTargetPosition: 0
   rightDialTargetPosition: 0
   noReturn: {fileID: 0}
+  usesAudio: 1
+  mainSource: {fileID: 1203489969}
+  musicSource: {fileID: 977808372}
+  musicSourceTwo: {fileID: 2081119255}
+  racingThemeIntro: {fileID: 8300000, guid: 151d2b012333acd46a10113bddb9b0ba, type: 3}
+  racingThemeLoop: {fileID: 8300000, guid: e09d12747c366bf42a3046b88b0ed24b, type: 3}
+  racingThemeOutro: {fileID: 8300000, guid: 4ed6d47627293e0449c3e4946900bf2f, type: 3}
 --- !u!4 &18532880
 Transform:
   m_ObjectHideFlags: 0
@@ -2492,6 +2499,13 @@ MonoBehaviour:
   leftDialTargetPosition: 0
   rightDialTargetPosition: 0
   noReturn: {fileID: 483478564}
+  usesAudio: 0
+  mainSource: {fileID: 0}
+  musicSource: {fileID: 0}
+  musicSourceTwo: {fileID: 0}
+  racingThemeIntro: {fileID: 0}
+  racingThemeLoop: {fileID: 0}
+  racingThemeOutro: {fileID: 0}
 --- !u!4 &74464191
 Transform:
   m_ObjectHideFlags: 0
@@ -2576,6 +2590,10 @@ PrefabInstance:
       propertyPath: dialogueList.Array.data[2]
       value: 
       objectReference: {fileID: 4900000, guid: 40afd34b4d7a70048b983dfafb470486, type: 3}
+    - target: {fileID: 4346753929436608068, guid: 166eedb70aafd1c47bd418665d7639d0, type: 3}
+      propertyPath: disableInteractionWhenDone
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6552022256893313629, guid: 166eedb70aafd1c47bd418665d7639d0, type: 3}
       propertyPath: m_LocalScale.x
       value: 5.2455106
@@ -14123,6 +14141,13 @@ MonoBehaviour:
   leftDialTargetPosition: 300
   rightDialTargetPosition: 150
   noReturn: {fileID: 483478564}
+  usesAudio: 0
+  mainSource: {fileID: 1203489969}
+  musicSource: {fileID: 0}
+  musicSourceTwo: {fileID: 0}
+  racingThemeIntro: {fileID: 0}
+  racingThemeLoop: {fileID: 0}
+  racingThemeOutro: {fileID: 0}
 --- !u!4 &422045644
 Transform:
   m_ObjectHideFlags: 0
@@ -21708,6 +21733,13 @@ MonoBehaviour:
   leftDialTargetPosition: 150
   rightDialTargetPosition: 325
   noReturn: {fileID: 0}
+  usesAudio: 0
+  mainSource: {fileID: 1203489969}
+  musicSource: {fileID: 0}
+  musicSourceTwo: {fileID: 0}
+  racingThemeIntro: {fileID: 0}
+  racingThemeLoop: {fileID: 0}
+  racingThemeOutro: {fileID: 0}
 --- !u!4 &569498210
 Transform:
   m_ObjectHideFlags: 0
@@ -36157,6 +36189,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1326164906}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &977808372 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 48541318141225478, guid: 51dd67c5e3f6ec746aa54a938edd40e1, type: 3}
+  m_PrefabInstance: {fileID: 1464524100}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &985374462
 GameObject:
   m_ObjectHideFlags: 0
@@ -36206,6 +36243,13 @@ MonoBehaviour:
   leftDialTargetPosition: 0
   rightDialTargetPosition: 0
   noReturn: {fileID: 0}
+  usesAudio: 0
+  mainSource: {fileID: 0}
+  musicSource: {fileID: 0}
+  musicSourceTwo: {fileID: 0}
+  racingThemeIntro: {fileID: 0}
+  racingThemeLoop: {fileID: 0}
+  racingThemeOutro: {fileID: 0}
 --- !u!4 &985374464
 Transform:
   m_ObjectHideFlags: 0
@@ -45507,6 +45551,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1579315548}
   m_LocalEulerAnglesHint: {x: 0, y: -10.996, z: -1.879}
+--- !u!82 &1203489969 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 5652833712406062935, guid: 51dd67c5e3f6ec746aa54a938edd40e1, type: 3}
+  m_PrefabInstance: {fileID: 1464524100}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1214532893
 GameObject:
   m_ObjectHideFlags: 0
@@ -54501,6 +54550,13 @@ MonoBehaviour:
   leftDialTargetPosition: 75
   rightDialTargetPosition: 275
   noReturn: {fileID: 0}
+  usesAudio: 0
+  mainSource: {fileID: 1203489969}
+  musicSource: {fileID: 0}
+  musicSourceTwo: {fileID: 0}
+  racingThemeIntro: {fileID: 0}
+  racingThemeLoop: {fileID: 0}
+  racingThemeOutro: {fileID: 0}
 --- !u!4 &1513346522
 Transform:
   m_ObjectHideFlags: 0
@@ -75049,6 +75105,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 932283647}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &2081119255 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 2307409428427459063, guid: 51dd67c5e3f6ec746aa54a938edd40e1, type: 3}
+  m_PrefabInstance: {fileID: 1464524100}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &2086980273
 Mesh:
   m_ObjectHideFlags: 0
