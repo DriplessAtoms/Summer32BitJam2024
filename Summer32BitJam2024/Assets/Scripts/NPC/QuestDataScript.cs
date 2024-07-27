@@ -24,6 +24,10 @@ public class QuestDataScript : MonoBehaviour
 
     public List<GameObject> fetchableItems;
 
+    public GameObject countScreen;
+
+    public TMP_Text countText;
+
     public float distanceFromPointB;
 
     public float timeForTimedQuest;
@@ -177,8 +181,11 @@ public class QuestDataScript : MonoBehaviour
     private void QuestFetch()
     {
         itemsCollected = 0;
+        countScreen.SetActive(true);
 
-        for(int i = 0; i < fetchableItems.Count; i++)
+        countText.text = itemsCollected.ToString() + "/" + fetchableItems.Count.ToString();
+
+        for (int i = 0; i < fetchableItems.Count; i++)
         {
             fetchableItems[i].SetActive(true);
         }
@@ -194,13 +201,16 @@ public class QuestDataScript : MonoBehaviour
         Debug.Log("Collected Item!");
 
         itemsCollected++;
-        if(itemsCollected == fetchableItems.Count)
+        countText.text = itemsCollected.ToString() + "/" + fetchableItems.Count.ToString();
+        if (itemsCollected == fetchableItems.Count)
         {
             EndQuestFetch();
         }
     }
     private void EndQuestFetch()
     {
+        countScreen.SetActive(false);
+
         itemsCollected = 0;
 
         Debug.Log("Finished Fetch Quest");
