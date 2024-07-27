@@ -2465,6 +2465,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.7
       objectReference: {fileID: 0}
+    - target: {fileID: 1470287173826713085, guid: 51dd67c5e3f6ec746aa54a938edd40e1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1680186237826494675, guid: 51dd67c5e3f6ec746aa54a938edd40e1, type: 3}
       propertyPath: hp
       value: 
@@ -2553,6 +2557,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2243736553178397037, guid: 51dd67c5e3f6ec746aa54a938edd40e1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3159195930677713319, guid: 51dd67c5e3f6ec746aa54a938edd40e1, type: 3}
       propertyPath: m_Name
       value: PlayerPrefab
@@ -2581,9 +2589,17 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.7
       objectReference: {fileID: 0}
+    - target: {fileID: 7090786400905197655, guid: 51dd67c5e3f6ec746aa54a938edd40e1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7569484782794559939, guid: 51dd67c5e3f6ec746aa54a938edd40e1, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8732072389695760464, guid: 51dd67c5e3f6ec746aa54a938edd40e1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

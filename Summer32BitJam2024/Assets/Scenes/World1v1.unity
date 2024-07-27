@@ -14,10 +14,10 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 0
+  m_Fog: 1
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
-  m_FogDensity: 0.01
+  m_FogDensity: 0.005
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
@@ -1053,6 +1053,8 @@ MonoBehaviour:
   chainQuestName: RadioMinigame
   actualChain: {fileID: 0}
   fetchableItems: []
+  countScreen: {fileID: 0}
+  countText: {fileID: 0}
   distanceFromPointB: 0
   timeForTimedQuest: 90
   leftDialStartPosition: 0
@@ -2567,6 +2569,8 @@ MonoBehaviour:
   - {fileID: 1705873966}
   - {fileID: 1690164043}
   - {fileID: 1997070179}
+  countScreen: {fileID: 0}
+  countText: {fileID: 0}
   distanceFromPointB: 0
   timeForTimedQuest: 0
   leftDialStartPosition: 0
@@ -14281,6 +14285,8 @@ MonoBehaviour:
   chainQuestName: 
   actualChain: {fileID: 998704775}
   fetchableItems: []
+  countScreen: {fileID: 0}
+  countText: {fileID: 0}
   distanceFromPointB: 0
   timeForTimedQuest: 0
   leftDialStartPosition: 0
@@ -22023,6 +22029,8 @@ MonoBehaviour:
   chainQuestName: 
   actualChain: {fileID: 4346753928774800928}
   fetchableItems: []
+  countScreen: {fileID: 0}
+  countText: {fileID: 0}
   distanceFromPointB: 0
   timeForTimedQuest: 0
   leftDialStartPosition: 0
@@ -36743,6 +36751,8 @@ MonoBehaviour:
   chainQuestName: 
   actualChain: {fileID: 0}
   fetchableItems: []
+  countScreen: {fileID: 0}
+  countText: {fileID: 0}
   distanceFromPointB: 0
   timeForTimedQuest: 0
   leftDialStartPosition: 0
@@ -55254,6 +55264,8 @@ MonoBehaviour:
   chainQuestName: 
   actualChain: {fileID: 1757733947}
   fetchableItems: []
+  countScreen: {fileID: 0}
+  countText: {fileID: 0}
   distanceFromPointB: 0
   timeForTimedQuest: 0
   leftDialStartPosition: 0
