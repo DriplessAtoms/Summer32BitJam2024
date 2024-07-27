@@ -8,6 +8,11 @@ public class MainMenu : MonoBehaviour
 {
     public AudioMixer mainMixer;
 
+    void Start()
+    {
+        Screen.SetResolution(640, 480, true);
+    }
+
     public void PlayGame() {
         //SceneManager.LoadSceneAsync(1);
         SceneManager.LoadScene(1, LoadSceneMode.Single);
