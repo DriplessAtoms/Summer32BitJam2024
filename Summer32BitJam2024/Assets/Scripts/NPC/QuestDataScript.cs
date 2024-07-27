@@ -20,6 +20,8 @@ public class QuestDataScript : MonoBehaviour
     public QuestDataScript chainNewQuest;
     public string chainQuestName;
 
+    public NPC_Data actualChain;
+
     public List<GameObject> fetchableItems;
 
     public float distanceFromPointB;
@@ -280,6 +282,11 @@ public class QuestDataScript : MonoBehaviour
             }
 
             playerInteractionScript.TriggerDialogue(chain.dialogueList[chain.dialogueNumber], chain.icons);
+            playerInteractionScript.disableNPC();
+        }
+        if(actualChain != null)
+        {
+            actualChain.canBeInteractedWith = true;
         }
         if(noReturn != null)
         {

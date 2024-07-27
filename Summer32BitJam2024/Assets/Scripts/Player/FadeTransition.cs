@@ -41,6 +41,7 @@ public class FadeTransition : MonoBehaviour
         if (transition && transitionValue < 1)
         {
             player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+            player.GetComponent<Rigidbody>().useGravity = false;
 
             transitionValue += Time.deltaTime * transitionSpeed;
             transitionImageColor = transitionImage.color;
@@ -58,12 +59,14 @@ public class FadeTransition : MonoBehaviour
         {
             player.transform.position = resetPos.transform.position;
             player.transform.rotation = resetPos.transform.rotation;
+            player.GetComponent<Rigidbody>().useGravity = false;
         }
         else if (teleport && player.transform.position == resetPos.transform.position && player.transform.rotation == resetPos.transform.rotation)
         {
             player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
             player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotationZ;
             player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotationX;
+            player.GetComponent<Rigidbody>().useGravity = true;
 
             if (scriptCall != null)
             {

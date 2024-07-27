@@ -80,4 +80,8 @@ public class PlayerInteraction : MonoBehaviour
             noReturn.ResetPos();
         }
     }
+    public void disableNPC()
+    {
+        npc.canBeInteractedWith = false;
+    }
 }

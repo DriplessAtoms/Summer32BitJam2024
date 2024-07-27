@@ -1051,6 +1051,7 @@ MonoBehaviour:
   chain: {fileID: 1757733947}
   chainNewQuest: {fileID: 569498209}
   chainQuestName: RadioMinigame
+  actualChain: {fileID: 0}
   fetchableItems: []
   distanceFromPointB: 0
   timeForTimedQuest: 90
@@ -1073,7 +1074,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 523498144}
-  - {fileID: 180704123}
   - {fileID: 2026497112}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2478,6 +2478,7 @@ MonoBehaviour:
   chain: {fileID: 4346753928774800928}
   chainNewQuest: {fileID: 422045643}
   chainQuestName: RadioMinigame
+  actualChain: {fileID: 0}
   fetchableItems:
   - {fileID: 2054429112}
   - {fileID: 1516722499}
@@ -5657,11 +5658,11 @@ Transform:
   m_GameObject: {fileID: 180704122}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.70710695, z: -0, w: 0.7071066}
-  m_LocalPosition: {x: -155.5, y: -8.45, z: 6.5}
+  m_LocalPosition: {x: -960, y: 80, z: 486}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 18532880}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!43 &192988906
 Mesh:
@@ -7237,6 +7238,10 @@ PrefabInstance:
       propertyPath: dialogueList.Array.data[0]
       value: 
       objectReference: {fileID: 4900000, guid: df89c4c1e5faa2446b90d693ceeca949, type: 3}
+    - target: {fileID: 4346753929436608068, guid: 166eedb70aafd1c47bd418665d7639d0, type: 3}
+      propertyPath: disableInteractionWhenDone
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6552022256893313629, guid: 166eedb70aafd1c47bd418665d7639d0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 195.91736
@@ -14105,6 +14110,7 @@ MonoBehaviour:
   chain: {fileID: 4346753928774800928}
   chainNewQuest: {fileID: 0}
   chainQuestName: 
+  actualChain: {fileID: 0}
   fetchableItems: []
   distanceFromPointB: 0
   timeForTimedQuest: 0
@@ -21854,6 +21860,7 @@ MonoBehaviour:
   chain: {fileID: 1757733947}
   chainNewQuest: {fileID: 0}
   chainQuestName: 
+  actualChain: {fileID: 0}
   fetchableItems: []
   distanceFromPointB: 0
   timeForTimedQuest: 0
@@ -30959,6 +30966,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4346753929436608068, guid: 166eedb70aafd1c47bd418665d7639d0, type: 3}
+      propertyPath: canBeInteractedWith
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4346753929436608068, guid: 166eedb70aafd1c47bd418665d7639d0, type: 3}
       propertyPath: icons.Array.data[1]
       value: 
       objectReference: {fileID: 2800000, guid: 59431f96c11e08c4385be532d77a88f8, type: 3}
@@ -30978,6 +30989,10 @@ PrefabInstance:
       propertyPath: dialogueList.Array.data[2]
       value: 
       objectReference: {fileID: 4900000, guid: e97357d36d328b54b80e5e5dc742c08c, type: 3}
+    - target: {fileID: 4346753929436608068, guid: 166eedb70aafd1c47bd418665d7639d0, type: 3}
+      propertyPath: disableInteractionWhenDone
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6552022256893313629, guid: 166eedb70aafd1c47bd418665d7639d0, type: 3}
       propertyPath: m_LocalScale.x
       value: 2.386856
@@ -36335,6 +36350,7 @@ MonoBehaviour:
   chain: {fileID: 0}
   chainNewQuest: {fileID: 0}
   chainQuestName: 
+  actualChain: {fileID: 0}
   fetchableItems: []
   distanceFromPointB: 0
   timeForTimedQuest: 0
@@ -54614,6 +54630,7 @@ MonoBehaviour:
   chain: {fileID: 1327133644}
   chainNewQuest: {fileID: 0}
   chainQuestName: 
+  actualChain: {fileID: 1757733947}
   fetchableItems: []
   distanceFromPointB: 0
   timeForTimedQuest: 0
@@ -76896,6 +76913,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4346753929436608068, guid: 166eedb70aafd1c47bd418665d7639d0, type: 3}
+      propertyPath: canBeInteractedWith
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4346753929436608068, guid: 166eedb70aafd1c47bd418665d7639d0, type: 3}
       propertyPath: icons.Array.data[0]
       value: 
       objectReference: {fileID: 2800000, guid: 73e90a47661ad8949bff95d5fb085a57, type: 3}
@@ -76923,6 +76944,10 @@ PrefabInstance:
       propertyPath: dialogueList.Array.data[2]
       value: 
       objectReference: {fileID: 4900000, guid: 9abef122e4a2196499696e980268bed7, type: 3}
+    - target: {fileID: 4346753929436608068, guid: 166eedb70aafd1c47bd418665d7639d0, type: 3}
+      propertyPath: disableInteractionWhenDone
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6552022256893313629, guid: 166eedb70aafd1c47bd418665d7639d0, type: 3}
       propertyPath: m_LocalPosition.x
       value: -311.5729
@@ -77580,6 +77605,14 @@ PrefabInstance:
       propertyPath: radioSound
       value: 
       objectReference: {fileID: 1367644839}
+    - target: {fileID: 4346753929436608068, guid: 166eedb70aafd1c47bd418665d7639d0, type: 3}
+      propertyPath: canBeInteractedWith
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4346753929436608068, guid: 166eedb70aafd1c47bd418665d7639d0, type: 3}
+      propertyPath: disableInteractionWhenDone
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6552022256893313629, guid: 166eedb70aafd1c47bd418665d7639d0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 190.39
@@ -77862,6 +77895,7 @@ SceneRoots:
   - {fileID: 1513346522}
   - {fileID: 1326164906}
   - {fileID: 807457771}
+  - {fileID: 180704123}
   - {fileID: 18532880}
   - {fileID: 569498210}
   - {fileID: 444119703}
